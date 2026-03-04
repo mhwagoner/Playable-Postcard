@@ -7,8 +7,8 @@
 const config = {
     parent: 'phaser-game',  // for info text
     type: Phaser.WEBGL,     // for tinting
-    width: 700,
-    height: 350,
+    width: 450,
+    height: 300,
     pixelArt: true,
     speed: 40,
     zoom: 2,
