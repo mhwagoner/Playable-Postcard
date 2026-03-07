@@ -5,12 +5,16 @@ class Load extends Phaser.Scene {
 
     preload() {
         //load all assets
+        this.load.path = './assets/'
+        this.load.image('card_text', 'postcard_text.png')
+        this.load.image('card_img', 'postcard_image.png')
+
     }
 
     create() {
         //make anims
 
         // proceed once loading completes
-        this.scene.start('playScene')
+        this.scene.start('textScene')
     }
 }

@@ -1,0 +1,14 @@
+[
+    [
+        {
+			"speaker" : "bottom",
+			"dialog" : "Are we all met?",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "worstBird",
+			"dialog" : "Don't believe it!!!!",
+			"newSpeaker" : "true"
+		}
+    ]
+]

@@ -1,6 +1,4 @@
-// Code Practice: Scrolling States
-// Name:
-// Date: 
+// Name: Michael Wagoner
 
 'use strict'
 
@@ -18,9 +16,10 @@ const config = {
             debug: true
         }
     },
-    scene: [ Load, Play ]
+    scene: [ Load, Text ]
 }
 
 const game = new Phaser.Game(config)
 
 let { width, height } = game.config
+let cursors = null
