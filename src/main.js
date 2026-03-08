@@ -5,11 +5,11 @@
 const config = {
     parent: 'phaser-game',  // for info text
     type: Phaser.WEBGL,     // for tinting
-    width: 450,
-    height: 300,
+    width: 900,
+    height: 600,
     pixelArt: true,
     speed: 40,
-    zoom: 2,
+    zoom: 1,
     physics: {
         default: "arcade",
         arcade: {

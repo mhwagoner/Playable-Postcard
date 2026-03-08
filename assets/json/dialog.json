@@ -1,32 +1,56 @@
 [
     [
         {
-			"speaker" : "bottom",
+			"speaker" : "socky",
 			"dialog" : "conversation 0",
 			"newSpeaker" : "true",
-			"option2" : "choice 1",
+			"option1" : "choice 1",
 			"converse1" : 1,
-			"option3" : "choice 2"
+			"location1" : "forest",
+			"option2" : "choice 2",
+			"converse2" : 2
 		},
 		{
-			"speaker" : "worstBird",
-			"dialog" : "Don't believe it!!! hey hey hey. blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah ",
+			"speaker" : "dopey",
+			"dialog" : "conversation 0 is pretty cool",
 			"newSpeaker" : "true"
 		}
     ],
 	[
         {
-			"speaker" : "bottom",
-			"dialog" : "we made it to conversation one1",
-			"newSpeaker" : "true",
-			"option1" : "choice 1",
-			"option2" : "choice 2",
-			"option3" : "choice 3",
-			"option4" : "choice 4"
+			"speaker" : "socky",
+			"dialog" : "we made it to conversation 1 by option 1",
+			"newSpeaker" : "true"
 		},
 		{
-			"speaker" : "worstBird",
-			"dialog" : "Don't believe it!!! hey hey hey. blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah ",
+			"speaker" : "dopey",
+			"dialog" : "conversation 1 is even better",
+			"newSpeaker" : "true",
+			"jump" : 3
+		}
+    ],
+	[
+        {
+			"speaker" : "socky",
+			"dialog" : "we made it to conversation 2 by option 2",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "conversation 2 is even better-er",
+			"newSpeaker" : "true",
+			"jump" : 3
+		}
+    ],
+	[
+        {
+			"speaker" : "socky",
+			"dialog" : "Conversation 3, thus ends the demo",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "hooray!",
 			"newSpeaker" : "true"
 		}
     ]

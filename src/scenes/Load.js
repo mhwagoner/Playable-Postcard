@@ -7,10 +7,11 @@ class Load extends Phaser.Scene {
         //load all assets
         this.load.path = './assets/'
         this.load.image('card_text', 'postcard_text.png')
-        this.load.image('card_img', 'postcard_image.png')
-        this.load.image('worstBird', 'worst_bird.png')
-        this.load.image('bottom', 'socky.png')
-        this.load.image('dialogbox', 'dialogbox.png')
+        //this.load.image('card_img', 'postcard_image.png')
+
+        //stamp profiles
+        this.load.image('dopey', 'dopey_profile.png')
+        this.load.image('socky', 'socky_profile.png')
         
         //campfire graphics
         this.load.image('campfire', 'campfire_graphic.png')
@@ -31,10 +32,10 @@ class Load extends Phaser.Scene {
 
         //set initial locations for characters using registry (a location can be set as 'dead' to indicate their death)
         this.registry.set({
-            socky: 'forest'
+            socky: 'swamp'
         })
 
         // proceed once loading completes
-        this.scene.start('campfireScene')
+        this.scene.start('textScene')
     }
 }
