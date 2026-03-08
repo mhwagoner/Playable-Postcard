@@ -5,18 +5,22 @@ class Text extends Phaser.Scene {
 
     init() {
         // dialog constants
-        this.DBOX_X = 0			        // dialog box x-position
-        this.DBOX_Y = 400			    // dialog box y-position
-        this.DBOX_FONT = 'lr_font'	    // dialog box font key 
+        this.MAIN_FONT = 'lr_font'	    // dialog box font key 
 
-        this.TEXT_X = 50			    // text w/in dialog box x-position
-        this.TEXT_Y = 445			    // text w/in dialog box y-position
-        this.TEXT_SIZE = 24		        // text font size (in pixels)
-        this.TEXT_MAX_WIDTH = 715	    // max width of text within box
+        this.TEXT_X = 10			    // text w/in dialog box x-position
+        this.TEXT_Y = 10			    // text w/in dialog box y-position
+        this.TEXT_SIZE = 16		        // text font size (in pixels)
+        this.TEXT_MAX_WIDTH = 230	    // max width of text within box
 
         this.NEXT_TEXT = '[SPACE]'	    // text to display for next prompt
-        this.NEXT_X = 775			    // next text prompt x-position
-        this.NEXT_Y = 574			    // next text prompt y-position
+        this.NEXT_X = 340			    // next text prompt x-position
+        this.NEXT_Y = 245			    // next text prompt y-position
+
+        this.OPTION_X = 270
+        this.OPTION1_Y = 115
+        this.OPTION2_Y = 150
+        this.OPTION3_Y = 185
+        this.OPTION4_Y = 220
 
         this.LETTER_TIMER = 10		    // # ms each letter takes to "type" onscreen
 
@@ -32,8 +36,8 @@ class Text extends Phaser.Scene {
         // character variables
         this.tweenDuration = 500        // character in/out tween duration
 
-        this.OFFSCREEN_X = -500         // x,y coordinates used to place characters offscreen
-        this.OFFSCREEN_Y = 1000
+        this.PROFILE_X = 373         // x,y coordinates used to place characters
+        this.PROFILE_Y = 22
     }
 
     create() {
@@ -51,10 +55,12 @@ class Text extends Phaser.Scene {
 
         //ready character profiles
         //this.Socky = this.add.sprite(0,0, 'socky')
+        this.bottom = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'bottom').setOrigin(0,0)
+        this.worstBird = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'worstBird').setOrigin(0,0)
 
         //initialize dialog text objects
-        this.dialogText = this.add.bitmapText(this.TEXT_X, this.TEXT_Y, this.DBOX_FONT, '', this.TEXT_SIZE)
-        this.nextText = this.add.bitmapText(this.NEXT_X, this.NEXT_Y, this.DBOX_FONT, '', this.TEXT_SIZE)
+        this.dialogText = this.add.bitmapText(this.TEXT_X, this.TEXT_Y, this.MAIN_FONT, '', this.TEXT_SIZE)
+        this.nextText = this.add.bitmapText(this.NEXT_X, this.NEXT_Y, this.MAIN_FONT, '', this.TEXT_SIZE)
 
         //start first conversation
         this.typeText()
@@ -100,7 +106,7 @@ class Text extends Phaser.Scene {
             
             // tween out prior speaker's image and return to title screen
             if(this.dialogLastSpeaker) {
-                this.tweens.add({
+                /*this.tweens.add({
                     targets: this[this.dialogLastSpeaker],
                     x: this.OFFSCREEN_X,
                     duration: this.tweenDuration,
@@ -109,7 +115,7 @@ class Text extends Phaser.Scene {
                         this.dialogbox.visible = false
                         this.scene.start('titleScene')
                     }
-                })
+                })*/
             }
         } else {
             // ...if we still have conversations left, set current speaker
@@ -117,22 +123,12 @@ class Text extends Phaser.Scene {
             
             // check if there's a new speaker (for exit/enter animations)
             if(this.dialog[this.dialogConvo][this.dialogLine]['newSpeaker']) {
-                // tween out prior speaker's image
+                //move prior speaker's image to lower depth
                 if(this.dialogLastSpeaker) {
-                    this.tweens.add({
-                        targets: this[this.dialogLastSpeaker],
-                        x: this.OFFSCREEN_X,
-                        duration: this.tweenDuration,
-                        ease: 'Linear'
-                    })
+                    this[this.dialogLastSpeaker].setDepth(1)
                 }
-                // tween in new speaker's image
-                this.tweens.add({
-                    targets: this[this.dialogSpeaker],
-                    x: this.DBOX_X + this[this.dialogSpeaker].speakerXOffset,
-                    duration: this.tweenDuration,
-                    ease: 'Linear'
-                })
+                // raise new speaker's image to higher depth
+                this[this.dialogSpeaker].setDepth(10)
             }
 
             // build dialog (concatenate speaker + colon + line of text)
@@ -155,7 +151,7 @@ class Text extends Phaser.Scene {
                     // (necessary since Phaser 3 no longer seems to have an onComplete event)
                     if(this.textTimer.getRepeatCount() == 0) {
                         // show prompt for more text
-                        this.nextText = this.add.bitmapText(this.NEXT_X, this.NEXT_Y, this.DBOX_FONT, this.NEXT_TEXT, this.TEXT_SIZE).setOrigin(1)
+                        this.nextText = this.add.bitmapText(this.NEXT_X, this.NEXT_Y, this.MAIN_FONT, this.NEXT_TEXT, this.TEXT_SIZE).setOrigin(0.5)
                         this.dialogTyping = false   // un-lock input
                         this.textTimer.destroy()    // destroy timer
                     }
