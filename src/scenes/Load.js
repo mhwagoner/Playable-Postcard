@@ -11,6 +11,11 @@ class Load extends Phaser.Scene {
         this.load.image('worstBird', 'worst_bird.png')
         this.load.image('bottom', 'socky.png')
         this.load.image('dialogbox', 'dialogbox.png')
+        
+        //campfire graphics
+        this.load.image('campfire', 'campfire_graphic.png')
+        this.load.image('X', 'red_x.png')
+        this.load.image('O', 'red_o.png')
 
 
         //load fonts
@@ -24,7 +29,12 @@ class Load extends Phaser.Scene {
     create() {
         //make anims
 
+        //set initial locations for characters using registry (a location can be set as 'dead' to indicate their death)
+        this.registry.set({
+            socky: 'forest'
+        })
+
         // proceed once loading completes
-        this.scene.start('textScene')
+        this.scene.start('campfireScene')
     }
 }

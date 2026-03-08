@@ -16,7 +16,7 @@ const config = {
             debug: true
         }
     },
-    scene: [ Load, Text ]
+    scene: [ Load, Campfire, Text ]
 }
 
 const game = new Phaser.Game(config)

@@ -45,6 +45,7 @@ class Text extends Phaser.Scene {
     }
 
     create() {
+        //console.log(this.registry.get('name'))
         //load background image
         this.background = this.add.image(0, 0, 'card_text').setOrigin(0,0)
         
@@ -101,10 +102,6 @@ class Text extends Phaser.Scene {
         this.typeText()
     }
 
-    tempfunction(){
-        console.log("hello")
-    }
-
     update() {
         // check for spacebar press
         if(Phaser.Input.Keyboard.JustDown(cursors.space) && !this.dialogTyping) {
@@ -143,9 +140,10 @@ class Text extends Phaser.Scene {
         
         // make sure we haven't run out of conversations...
         if(this.dialogConvo >= this.dialog.length) {
-            // here I'm exiting the final conversation to return to the title...
-            // ...but you could add alternate logic if needed
+            
             console.log('End of Conversations')
+
+            this.scene.start()
             
             // tween out prior speaker's image and return to title screen
             if(this.dialogLastSpeaker) {
