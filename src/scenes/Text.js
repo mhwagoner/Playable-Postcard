@@ -64,6 +64,12 @@ class Text extends Phaser.Scene {
         //this.Socky = this.add.sprite(0,0, 'socky')
         this.socky = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'socky').setOrigin(0,0)
         this.dopey = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'dopey').setOrigin(0,0)
+        this.doug = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'doug').setOrigin(0,0)
+        this.dave = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'dave').setOrigin(0,0)
+        this.carlos = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'carlos').setOrigin(0,0)
+        this.miguel = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'miguel').setOrigin(0,0)
+        this.wolfgang = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'wolfgang').setOrigin(0,0)
+        this.wilbur = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'wilbur').setOrigin(0,0)
 
         //initialize dialog text objects
         this.dialogText = this.add.bitmapText(this.TEXT_X, this.TEXT_Y, this.MAIN_FONT, '', this.TEXT_SIZE)
@@ -159,6 +165,7 @@ class Text extends Phaser.Scene {
         } else {
             // ...if we still have conversations left, set current speaker
             this.dialogSpeaker = this.dialog[this.dialogConvo][this.dialogLine]['speaker']
+            console.log(this.dialogSpeaker)
             
             // check if there's a new speaker (for exit/enter animations)
             if(this.dialog[this.dialogConvo][this.dialogLine]['newSpeaker']) {
@@ -229,9 +236,8 @@ class Text extends Phaser.Scene {
             //change speaker's location (if applicable)
             if(this.dialog[this.dialogConvo][this.dialogLine-1]['location' + numOption]){ //location1 stores the location option 2 changes
                 let newLocation = this.dialog[this.dialogConvo][this.dialogLine-1]['location' + numOption]
-                let speaker = this.dialog[this.dialogConvo][this.dialogLine-1]['speaker']
-                this.data.set(speaker, newLocation)
-                console.log(speaker + " moved to: " + this.data.get(speaker))
+                this.data.set(this.dialogSpeaker, newLocation)
+                console.log(this.dialogSpeaker + " moved to: " + this.data.get(this.dialogSpeaker))
             }
             
             //change to new conversation

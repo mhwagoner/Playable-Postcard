@@ -12,6 +12,12 @@ class Load extends Phaser.Scene {
         //stamp profiles
         this.load.image('dopey', 'dopey_profile.png')
         this.load.image('socky', 'socky_profile.png')
+        this.load.image('doug', 'doug_profile.png')
+        this.load.image('dave', 'dave_profile.png')
+        this.load.image('carlos', 'carlos_profile.png')
+        this.load.image('miguel', 'miguel_profile.png')
+        this.load.image('wolfgang', 'wolfgang_profile.png')
+        this.load.image('wilbur', 'wilbur_profile.png')
         
         //campfire graphics
         this.load.image('campfire', 'campfire_graphic.png')

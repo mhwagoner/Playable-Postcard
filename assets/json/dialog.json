@@ -23,6 +23,11 @@
 			"newSpeaker" : "true"
 		},
 		{
+			"speaker" : "wilbur",
+			"dialog" : "I'm here too!",
+			"newSpeaker" : "true"
+		},
+		{
 			"speaker" : "dopey",
 			"dialog" : "conversation 1 is even better",
 			"newSpeaker" : "true",
