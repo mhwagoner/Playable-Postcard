@@ -69,14 +69,14 @@ class Text extends Phaser.Scene {
 
         //ready character profiles
         //this.Socky = this.add.sprite(0,0, 'socky')
-        this.socky = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'socky').setOrigin(1,0).setScale(1.5)
-        this.dopey = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'dopey').setOrigin(1,0).setScale(1.5)
-        this.doug = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'doug').setOrigin(1,0).setScale(1.5)
-        this.dave = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'dave').setOrigin(1,0).setScale(1.5)
-        this.carlos = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'carlos').setOrigin(1,0).setScale(1.5)
-        this.miguel = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'miguel').setOrigin(1,0).setScale(1.5)
-        this.wolfgang = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'wolfgang').setOrigin(1,0).setScale(1.5)
-        this.wilbur = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'wilbur').setOrigin(1,0).setScale(1.5)
+        this.socky = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'socky').setOrigin(1,0).setScale(0.75)
+        this.dopey = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'dopey').setOrigin(1,0).setScale(0.75)
+        this.doug = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'doug').setOrigin(1,0).setScale(0.75)
+        this.dave = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'dave').setOrigin(1,0).setScale(0.75)
+        this.carlos = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'carlos').setOrigin(1,0).setScale(0.75)
+        this.miguel = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'miguel').setOrigin(1,0).setScale(0.75)
+        this.wolfgang = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'wolfgang').setOrigin(1,0).setScale(0.75)
+        this.wilbur = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'wilbur').setOrigin(1,0).setScale(0.75)
 
         //initialize dialog text objects
         this.dialogText = this.add.bitmapText(this.TEXT_X, this.TEXT_Y, this.MAIN_FONT, '', this.TEXT_SIZE)
@@ -134,7 +134,9 @@ class Text extends Phaser.Scene {
             - each "line" can have 3 properties: 
                 1. a speaker (required)
                 2. the dialog text (required)
-                3. an (optional) flag indicating if this speaker is new
+                3. option1 : "option 1 text"
+                4. convo1 : 2 (number conversation to jump to)
+                5. location1 : "forest" (new location of speaker)
         */
 
         // make sure there are lines left to read in this conversation, otherwise jump to next conversation
@@ -154,7 +156,7 @@ class Text extends Phaser.Scene {
             
             console.log('End of Conversations')
 
-            this.scene.start()
+            this.scene.start('campfireScene')
             
             // tween out prior speaker's image and return to title screen
             if(this.dialogLastSpeaker) {

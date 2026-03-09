@@ -13,10 +13,10 @@ const config = {
     physics: {
         default: "arcade",
         arcade: {
-            debug: true
+            debug: false
         }
     },
-    scene: [ Load, Campfire, Text ]
+    scene: [ Load, Campfire, Text, Walk ]
 }
 
 const game = new Phaser.Game(config)

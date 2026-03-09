@@ -38,7 +38,8 @@
 		},
 		{
 			"speaker" : "dave",
-			"dialog" : "Show us! Show us!"
+			"dialog" : "Show us! Show us!",
+			"jump" : 8
 		}
 	],
 	[
@@ -58,7 +59,7 @@
 		},
 		{
 			"speaker" : "socky",
-			"dialog" : "I knew you would. I can tell you're a special player. I'm sure you'll beat the game when it releases on steam in Summer of TBD!"
+			"dialog" : "I knew you would. I can tell you're a special player. I'm sure you'll beat the game when it releases."
 		},
 		{
 			"speaker" : "socky",
@@ -143,7 +144,14 @@
 		{
 			"speaker" : "dopey",
 			"dialog" : "What's the 'other part' of the game? I'm so curious!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "I was just about to show that off! By advancing the text to its conclusion, you'll trigger the next part of the game: the on-the-ground point and click adventure section"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "When you finish reading this, you'll flip to the other side of the postcard. When you do, simply click on which character's perspective you wish to view and you'll watch their story play out!"
 		}
-
 	]
 ]

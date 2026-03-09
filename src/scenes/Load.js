@@ -7,7 +7,7 @@ class Load extends Phaser.Scene {
         //load all assets
         this.load.path = './assets/'
         this.load.image('card_text', 'postcard_text.png')
-        //this.load.image('card_img', 'postcard_image.png')
+        this.load.image('card_img', 'postcard_image.png')
 
         //stamp profiles
         this.load.image('dopey', 'dopey_profile.png')
@@ -18,7 +18,7 @@ class Load extends Phaser.Scene {
         this.load.image('miguel', 'miguel_profile.png')
         this.load.image('wolfgang', 'wolfgang_profile.png')
         this.load.image('wilbur', 'wilbur_profile.png')
-        
+
         //campfire graphics
         this.load.image('campfire', 'campfire_graphic.png')
         this.load.image('X', 'red_x.png')
@@ -35,6 +35,11 @@ class Load extends Phaser.Scene {
 
         //load json
         this.load.json('dialog', 'json/dialog.json')
+
+        //walking scenes
+        this.load.image('flashlight_img', 'flashlight.png')
+
+        this.load.image('rutherford_stairs', 'rutherford_stairs.png')
 
     }
 
