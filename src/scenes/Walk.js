@@ -18,9 +18,10 @@ class Walk extends Phaser.Scene {
         this.currScene = ''
         this.advanceScene('merrill_choice')
         this.deathTimer = 500
+        this.sfxPlayed = false
 
         this.deathText = this.add.bitmapText(config.width/2, config.height/2, 'lr_font', '', 40).setOrigin(0.5).setDepth(11)
-        
+        this.deathText.maxWidth = 800
     }
 
     update() {
@@ -34,7 +35,8 @@ class Walk extends Phaser.Scene {
         }
 
         if(this.currScene == 'trees_death'){
-            this.deathText.text = "A tree fell on you and knocked you out!"
+            this.deathText.text = "A tree fell on you and knocked you out! Your body was cleared away by a groundskeeper the next morning.       GAME OVER"
+            this.playSFX('sfx-tree')
             /*let sfxPlaying = false
             if(!sfxPlaying) {
                 sfxPlaying = true
@@ -47,9 +49,9 @@ class Walk extends Phaser.Scene {
                 this.deathText.text = "A tree fell on you and knocked you out!"
             }*/
         } else if (this.currScene == 'classroom'){
-            this.deathText.text = "You were stabbed by a hidden goblin!"
-            /*this.sound.play('sfx-knife')
-            //timer to death message
+            this.deathText.text = "You, the playtester, were stabbed by a hidden goblin! You're dead! How are you even reading this? GAME OVER."
+            this.playSFX('sfx-knife')
+            /*timer to death message
             if(this.deathTimer > 0){
                 this.deathTimer--
             }else{
@@ -117,5 +119,12 @@ class Walk extends Phaser.Scene {
         }
 
         this.sceneElements.add(this.arrow1, this.arrow2)
+    }
+
+    playSFX(sfxKey){
+        if (this.sfxPlayed == false){
+            this.sound.play(sfxKey)
+            this.sfxPlayed = true
+        }
     }
 }
