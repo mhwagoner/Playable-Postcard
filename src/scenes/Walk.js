@@ -5,8 +5,19 @@ class Walk extends Phaser.Scene {
 
     create() {
         this.cardBack = this.add.image(0, 0, 'card_img').setOrigin(0)
-        this.background = this.add.image(25, 25, 'rutherford_stairs').setOrigin(0).setScale(0.2)
-        this.flashlight = this.physics.add.sprite(0, 0, 'flashlight_img').setOrigin(0.5)
+        this.flashlight = this.physics.add.sprite(0, 0, 'flashlight_img').setOrigin(0.5).setDepth(10)
+
+        //initialize first scene
+        this.sceneElements = this.add.group({
+            classType: Phaser.Physics.Arcade.Sprite,
+            active: true,
+            maxSize: -1,
+            runChildUpdate: true
+        })
+
+        this.currScene = ''
+        this.advanceScene('merrill_choice')
+        
     }
 
     update() {
@@ -17,6 +28,69 @@ class Walk extends Phaser.Scene {
         }
         if(Math.abs(this.flashlight.x - this.input.activePointer.x) > 5 || Math.abs(this.flashlight.y - this.input.activePointer.y) > 5){
             this.physics.moveToObject(this.flashlight, this.input.activePointer, 300)
+        }
+
+        if(this.currScene == 'trees_death'){
+            //timer to death
+        } else if (this.currScene == 'classroom'){
+            //timer to death
+        }
+    }
+
+    advanceScene(nextScene) {
+        this.sceneElements.clear()
+        this.currScene = nextScene
+        
+        //set background image
+        let nextSceneBackground = this.add.image(25, 25, nextScene).setOrigin(0).setScale(0.9)
+        this.sceneElements.add(nextSceneBackground)
+        
+        //add arrow(s)
+        if(nextScene == 'merrill_choice'){
+            let arrow1 = this.add.image(200, 150, 'arrow').setAngle(-90).setScale(0.05)
+            arrow1.setInteractive()
+            arrow1.on('pointerdown', () => {
+                this.advanceScene('trees')
+                console.log("trees")
+            })
+            
+            let arrow2 = this.add.image(700, 400, 'arrow').setAngle(-45).setScale(0.05)
+            arrow2.setInteractive()
+            arrow2.on('pointerdown', () => {
+                this.advanceScene('merrill_entrance')
+                console.log("merril building")
+            })
+
+            this.sceneElements.add(arrow1, arrow2)
+            
+        } else if (nextScene == 'trees'){
+            let arrow1 = this.add.image(300, 300, 'arrow').setAngle(0).setScale(0.05)
+            arrow1.setInteractive()
+            arrow1.on('pointerdown', () => {
+                this.advanceScene('trees_death')
+                console.log("trees_death")
+            })
+        } else if (nextScene == 'merrill_entrance'){
+            let arrow1 = this.add.image(300, 400, 'arrow').setAngle(0).setScale(0.05)
+            arrow1.setInteractive()
+            arrow1.on('pointerdown', () => {
+                this.advanceScene('merrill_hallway')
+                console.log("merrill_hallway")
+            })
+        } else if (nextScene == 'merrill_hallway'){
+            let arrow1 = this.add.image(450, 500, 'arrow').setAngle(-90).setScale(0.05)
+            arrow1.setInteractive()
+            arrow1.on('pointerdown', () => {
+                this.advanceScene('classroom_entrance')
+                console.log("classroom_entrance")
+            })
+        } else if (nextScene == 'classroom_entrance'){
+            let arrow1 = this.add.image(100, 300, 'arrow').setAngle(0).setScale(0.05)
+            arrow1.setInteractive()
+            arrow1.on('pointerdown', () => {
+                this.advanceScene('classroom')
+                console.log("classroom")
+            })
         }
     }
 }

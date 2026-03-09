@@ -38,8 +38,15 @@ class Load extends Phaser.Scene {
 
         //walking scenes
         this.load.image('flashlight_img', 'flashlight.png')
+        this.load.image('arrow', 'arrow.png')
 
-        this.load.image('rutherford_stairs', 'rutherford_stairs.png')
+        this.load.image('merrill_choice', 'merrill_choice.png')
+        this.load.image('classroom_entrance', 'classroom_entrance.png')
+        this.load.image('classroom', 'classroom.png')
+        this.load.image('trees', 'trees.png')
+        this.load.image('trees_death', 'trees_death.png')
+        this.load.image('merrill_entrance', 'merrill_entrance.png')
+        this.load.image('merrill_hallway', 'merrill_hallway.png')
 
     }
 
@@ -52,6 +59,6 @@ class Load extends Phaser.Scene {
         })
 
         // proceed once loading completes
-        this.scene.start('textScene')
+        this.scene.start('walkScene')
     }
 }
