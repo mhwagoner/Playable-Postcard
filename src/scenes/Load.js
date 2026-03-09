@@ -29,6 +29,11 @@ class Load extends Phaser.Scene {
         this.load.audio('sfx-write2', 'write2.mp3')
         this.load.audio('card_flip', 'card_flip.mp3')
         this.load.audio('bgm-text', 'Imagho-Camping.mp3')
+        this.load.audio('sfx-footstep1', 'footstep1.mp3')
+        this.load.audio('sfx-footstep2', 'footstep2.mp3')
+        this.load.audio('sfx-footstep3', 'footstep3.mp3')
+        this.load.audio('sfx-tree', 'tree.mp3')
+        this.load.audio('sfx-knife', 'knife.mp3')
 
         //load fonts
         this.load.bitmapFont('lr_font', 'font/Lovely_Rose.png', 'font/Lovely_Rose.xml')
@@ -59,6 +64,6 @@ class Load extends Phaser.Scene {
         })
 
         // proceed once loading completes
-        this.scene.start('walkScene')
+        this.scene.start('textScene')
     }
 }

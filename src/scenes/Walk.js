@@ -17,6 +17,9 @@ class Walk extends Phaser.Scene {
 
         this.currScene = ''
         this.advanceScene('merrill_choice')
+        this.deathTimer = 500
+
+        this.deathText = this.add.bitmapText(config.width/2, config.height/2, 'lr_font', '', 40).setOrigin(0.5).setDepth(11)
         
     }
 
@@ -31,15 +34,37 @@ class Walk extends Phaser.Scene {
         }
 
         if(this.currScene == 'trees_death'){
-            //timer to death
+            this.deathText.text = "A tree fell on you and knocked you out!"
+            /*let sfxPlaying = false
+            if(!sfxPlaying) {
+                sfxPlaying = true
+                //this.sound.play('sfx-write2')
+            }
+            //timer to death message
+            if(this.deathTimer > 0){
+                this.deathTimer--
+            }else{
+                this.deathText.text = "A tree fell on you and knocked you out!"
+            }*/
         } else if (this.currScene == 'classroom'){
-            //timer to death
+            this.deathText.text = "You were stabbed by a hidden goblin!"
+            /*this.sound.play('sfx-knife')
+            //timer to death message
+            if(this.deathTimer > 0){
+                this.deathTimer--
+            }else{
+                this.deathText.text = "A tree fell on you and knocked you out!"
+            }*/
         }
     }
 
     advanceScene(nextScene) {
-        this.sceneElements.clear()
+        this.sceneElements.clear(true, true)
         this.currScene = nextScene
+
+        //play footstep sfx
+        let footstepNum = Phaser.Math.Between(1,3)
+        this.sound.play('sfx-footstep' + footstepNum)
         
         //set background image
         let nextSceneBackground = this.add.image(25, 25, nextScene).setOrigin(0).setScale(0.9)
@@ -47,50 +72,50 @@ class Walk extends Phaser.Scene {
         
         //add arrow(s)
         if(nextScene == 'merrill_choice'){
-            let arrow1 = this.add.image(200, 150, 'arrow').setAngle(-90).setScale(0.05)
-            arrow1.setInteractive()
-            arrow1.on('pointerdown', () => {
+            this.arrow1 = this.add.image(200, 150, 'arrow').setAngle(-90).setScale(0.05)
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
                 this.advanceScene('trees')
                 console.log("trees")
             })
             
-            let arrow2 = this.add.image(700, 400, 'arrow').setAngle(-45).setScale(0.05)
-            arrow2.setInteractive()
-            arrow2.on('pointerdown', () => {
+            this.arrow2 = this.add.image(700, 400, 'arrow').setAngle(-45).setScale(0.05)
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('merrill_entrance')
                 console.log("merril building")
             })
-
-            this.sceneElements.add(arrow1, arrow2)
             
         } else if (nextScene == 'trees'){
-            let arrow1 = this.add.image(300, 300, 'arrow').setAngle(0).setScale(0.05)
-            arrow1.setInteractive()
-            arrow1.on('pointerdown', () => {
+            this.arrow1 = this.add.image(300, 300, 'arrow').setAngle(0).setScale(0.05)
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
                 this.advanceScene('trees_death')
                 console.log("trees_death")
             })
         } else if (nextScene == 'merrill_entrance'){
-            let arrow1 = this.add.image(300, 400, 'arrow').setAngle(0).setScale(0.05)
-            arrow1.setInteractive()
-            arrow1.on('pointerdown', () => {
+            this.arrow1 = this.add.image(300, 400, 'arrow').setAngle(0).setScale(0.05)
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
                 this.advanceScene('merrill_hallway')
                 console.log("merrill_hallway")
             })
         } else if (nextScene == 'merrill_hallway'){
-            let arrow1 = this.add.image(450, 500, 'arrow').setAngle(-90).setScale(0.05)
-            arrow1.setInteractive()
-            arrow1.on('pointerdown', () => {
+            this.arrow1 = this.add.image(450, 500, 'arrow').setAngle(-90).setScale(0.05)
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
                 this.advanceScene('classroom_entrance')
                 console.log("classroom_entrance")
             })
         } else if (nextScene == 'classroom_entrance'){
-            let arrow1 = this.add.image(100, 300, 'arrow').setAngle(0).setScale(0.05)
-            arrow1.setInteractive()
-            arrow1.on('pointerdown', () => {
+            this.arrow1 = this.add.image(100, 300, 'arrow').setAngle(0).setScale(0.05)
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
                 this.advanceScene('classroom')
                 console.log("classroom")
             })
         }
+
+        this.sceneElements.add(this.arrow1, this.arrow2)
     }
 }
