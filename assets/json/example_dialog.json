@@ -1,0 +1,62 @@
+[
+    [
+        {
+			"speaker" : "socky",
+			"dialog" : "conversation 0",
+			"newSpeaker" : "true",
+			"option1" : "choice 1",
+			"convo1" : 1,
+			"location1" : "forest",
+			"option2" : "choice 2",
+			"convo2" : 2
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "conversation 0 is pretty cool",
+			"newSpeaker" : "true"
+		}
+    ],
+	[
+        {
+			"speaker" : "socky",
+			"dialog" : "we made it to conversation 1 by option 1",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "I'm here too!",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "conversation 1 is even better",
+			"newSpeaker" : "true",
+			"jump" : 3
+		}
+    ],
+	[
+        {
+			"speaker" : "socky",
+			"dialog" : "we made it to conversation 2 by option 2",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "conversation 2 is even better-er",
+			"newSpeaker" : "true",
+			"jump" : 3
+		}
+    ],
+	[
+        {
+			"speaker" : "socky",
+			"dialog" : "Conversation 3, thus ends the demo",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "hooray!",
+			"newSpeaker" : "true"
+		}
+    ]
+]

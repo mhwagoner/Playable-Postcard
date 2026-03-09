@@ -9,7 +9,7 @@ class Text extends Phaser.Scene {
 
         this.TEXT_X = 10			    // text w/in dialog box x-position
         this.TEXT_Y = 10			    // text w/in dialog box y-position
-        this.TEXT_SIZE = 32		        // text font size (in pixels)
+        this.TEXT_SIZE = 40		        // text font size (in pixels)
         this.TEXT_MAX_WIDTH = 230*2	    // max width of text within box
 
         this.NEXT_TEXT = '[SPACE]'	    // text to display for next prompt
@@ -23,6 +23,7 @@ class Text extends Phaser.Scene {
         this.OPTION2_Y = 150*2            // y-pos of option 2
         this.OPTION3_Y = 185*2            // y-pos of option 3
         this.OPTION4_Y = 220*2            // y-pos of option 4
+        this.OPTION_TEXT_SIZE = 32		  // text font size (in pixels)
 
         this.LETTER_TIMER = 10		    // # ms each letter takes to "type" onscreen
 
@@ -42,61 +43,67 @@ class Text extends Phaser.Scene {
         // character variables
         this.tweenDuration = 500        // character in/out tween duration
 
-        this.PROFILE_X = 375*2         // x,y coordinates used to place characters
-        this.PROFILE_Y = 22*2
+        this.PROFILE_X = 40         // x,y coordinates used to place characters
+        this.PROFILE_Y = 20
     }
 
     create() {
         //console.log(this.registry.get('name'))
         //load background image
         this.background = this.add.image(0, 0, 'card_text').setOrigin(0,0)
+
+        //add background music
+        this.bgm = this.sound.add('bgm-text', { 
+            loop: true, volume: 0.5 
+        })
+        this.bgm.play()
         
         // setup keyboard input
         cursors = this.input.keyboard.createCursorKeys()
 
         // update instruction text
-        document.getElementById('info').innerHTML = '<strong>Playable Postcard:</strong> Mouse: interact'
+        document.getElementById('info').innerHTML = '<strong>Playable Postcard:</strong> Space: advance dialogue Mouse: interact'
         
         //parse dialog
         this.dialog = this.cache.json.get('dialog')
 
         //ready character profiles
         //this.Socky = this.add.sprite(0,0, 'socky')
-        this.socky = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'socky').setOrigin(0,0)
-        this.dopey = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'dopey').setOrigin(0,0)
-        this.doug = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'doug').setOrigin(0,0)
-        this.dave = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'dave').setOrigin(0,0)
-        this.carlos = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'carlos').setOrigin(0,0)
-        this.miguel = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'miguel').setOrigin(0,0)
-        this.wolfgang = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'wolfgang').setOrigin(0,0)
-        this.wilbur = this.add.sprite(this.PROFILE_X, this.PROFILE_Y, 'wilbur').setOrigin(0,0)
+        this.socky = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'socky').setOrigin(1,0).setScale(1.5)
+        this.dopey = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'dopey').setOrigin(1,0).setScale(1.5)
+        this.doug = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'doug').setOrigin(1,0).setScale(1.5)
+        this.dave = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'dave').setOrigin(1,0).setScale(1.5)
+        this.carlos = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'carlos').setOrigin(1,0).setScale(1.5)
+        this.miguel = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'miguel').setOrigin(1,0).setScale(1.5)
+        this.wolfgang = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'wolfgang').setOrigin(1,0).setScale(1.5)
+        this.wilbur = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'wilbur').setOrigin(1,0).setScale(1.5)
 
         //initialize dialog text objects
         this.dialogText = this.add.bitmapText(this.TEXT_X, this.TEXT_Y, this.MAIN_FONT, '', this.TEXT_SIZE)
         this.nextText = this.add.bitmapText(this.NEXT_X, this.NEXT_Y, this.MAIN_FONT, '', this.TEXT_SIZE)
-        this.option1Text = this.add.bitmapText(this.OPTION_X, this.OPTION1_Y, this.MAIN_FONT, '', this.TEXT_SIZE).setOrigin(0,1)
-        this.option2Text = this.add.bitmapText(this.OPTION_X, this.OPTION2_Y, this.MAIN_FONT, '', this.TEXT_SIZE).setOrigin(0,1)
-        this.option3Text = this.add.bitmapText(this.OPTION_X, this.OPTION3_Y, this.MAIN_FONT, '', this.TEXT_SIZE).setOrigin(0,1)
-        this.option4Text = this.add.bitmapText(this.OPTION_X, this.OPTION4_Y, this.MAIN_FONT, '', this.TEXT_SIZE).setOrigin(0,1)
+        this.option1Text = this.add.bitmapText(this.OPTION_X, this.OPTION1_Y, this.MAIN_FONT, '', this.OPTION_TEXT_SIZE).setOrigin(0,1)
+        this.option2Text = this.add.bitmapText(this.OPTION_X, this.OPTION2_Y, this.MAIN_FONT, '', this.OPTION_TEXT_SIZE).setOrigin(0,1)
+        this.option3Text = this.add.bitmapText(this.OPTION_X, this.OPTION3_Y, this.MAIN_FONT, '', this.OPTION_TEXT_SIZE).setOrigin(0,1)
+        this.option4Text = this.add.bitmapText(this.OPTION_X, this.OPTION4_Y, this.MAIN_FONT, '', this.OPTION_TEXT_SIZE).setOrigin(0,1)
 
         //make options interactive
         const optionHitbox = new Phaser.Geom.Rectangle(0, 0, this.OPTION_WIDTH, this.OPTION_HEIGHT);
 
         this.option1Text.setInteractive(optionHitbox, Phaser.Geom.Rectangle.Contains)
         this.option1Text.on('pointerdown', () => {this.optionFunction('1')})
-        this.input.enableDebug(this.option1Text)
+        //this.input.enableDebug(this.option1Text)
 
         this.option2Text.setInteractive(optionHitbox, Phaser.Geom.Rectangle.Contains)
         this.option2Text.on('pointerdown', () => {this.optionFunction('2')})
-        this.input.enableDebug(this.option2Text)
+        //this.input.enableDebug(this.option2Text)
 
         this.option3Text.setInteractive(optionHitbox, Phaser.Geom.Rectangle.Contains)
         this.option3Text.on('pointerdown', () => {this.optionFunction('3')})
-        this.input.enableDebug(this.option3Text)
+        //this.input.enableDebug(this.option3Text)
 
         this.option4Text.setInteractive(optionHitbox, Phaser.Geom.Rectangle.Contains)
         this.option4Text.on('pointerdown', () => {this.optionFunction('4')})
-        this.input.enableDebug(this.option4Text)
+        //this.input.enableDebug(this.option4Text)
 
         //start first conversation
         this.typeText()
@@ -166,22 +173,23 @@ class Text extends Phaser.Scene {
             // ...if we still have conversations left, set current speaker
             this.dialogSpeaker = this.dialog[this.dialogConvo][this.dialogLine]['speaker']
             console.log(this.dialogSpeaker)
-            
-            // check if there's a new speaker (for exit/enter animations)
-            if(this.dialog[this.dialogConvo][this.dialogLine]['newSpeaker']) {
-                //move prior speaker's image to lower depth
-                if(this.dialogLastSpeaker) {
-                    this[this.dialogLastSpeaker].setDepth(1)
-                }
-                // raise new speaker's image to higher depth
-                this[this.dialogSpeaker].setDepth(10)
+
+            //move prior speaker's image to lower depth
+            if(this.dialogLastSpeaker) {
+                this[this.dialogLastSpeaker].setDepth(1)
             }
+            // raise new speaker's image to higher depth
+            this[this.dialogSpeaker].setDepth(10)
 
             // build dialog (concatenate speaker + colon + line of text)
             this.combinedDialog = 
                 this.dialog[this.dialogConvo][this.dialogLine]['speaker'].toUpperCase() 
                 + ': ' 
                 + this.dialog[this.dialogConvo][this.dialogLine]['dialog']
+
+            //play sfx
+            if(Phaser.Math.Between(1,2)==1) {this.sound.play('sfx-write1')}
+            else {this.sound.play('sfx-write2')}
 
             // create a timer to iterate through each letter in the dialog text
             let currentChar = 0
@@ -231,7 +239,7 @@ class Text extends Phaser.Scene {
 
     optionFunction(numOption) {
         console.log(numOption)
-        if(this.dialog[this.dialogConvo][this.dialogLine-1]['converse' + numOption]){ //converse1 stores the # conversation option 1 sends to
+        if(this.dialog[this.dialogConvo][this.dialogLine-1]['convo' + numOption]){ //convo1 stores the # conversation option 1 sends to
                 
             //change speaker's location (if applicable)
             if(this.dialog[this.dialogConvo][this.dialogLine-1]['location' + numOption]){ //location1 stores the location option 2 changes
@@ -241,7 +249,7 @@ class Text extends Phaser.Scene {
             }
             
             //change to new conversation
-            let newConvo = this.dialog[this.dialogConvo][this.dialogLine-1]['converse' + numOption]
+            let newConvo = this.dialog[this.dialogConvo][this.dialogLine-1]['convo' + numOption]
             this.dialogConvo = newConvo
             this.dialogLine = 0 //start on line 0 of new convo
             this.typeText()

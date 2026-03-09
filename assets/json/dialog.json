@@ -2,61 +2,148 @@
     [
         {
 			"speaker" : "socky",
-			"dialog" : "conversation 0",
-			"newSpeaker" : "true",
-			"option1" : "choice 1",
-			"converse1" : 1,
-			"location1" : "forest",
-			"option2" : "choice 2",
-			"converse2" : 2
+			"dialog" : "Hello there valued reader. My name is Socky the Sock. Welcome to Michael's Playable Postcard Demonstration."
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "Why are you writing the text white on tan? You're going to make us blind!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Wolfgang! Don't inturupt while I'm giving the introduction!"
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "Sorry buddy!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "That was my friend Wolfgang. He can be a bit brutish. You can see our names in the top left corner of the screen while we converse."
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "As long as they can handle poor color contrast you mean..."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "The foundation of the text adventure portion of Michael's game was taken from Nathan's dialoguing example."
 		},
 		{
 			"speaker" : "dopey",
-			"dialog" : "conversation 0 is pretty cool",
-			"newSpeaker" : "true"
+			"dialog" : "The text adventure is only part of the game?! Color me intrigued!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Be patient Dopey. First let's show off some additions made to the dialogue system; most important of which is options for player interation and branching dialogue!"
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "Show us! Show us!"
+		}
+	],
+	[
+		{
+			"speaker" : "socky",
+			"dialog" : "Ta-da!!! Just go ahead and click on the option that feels right to you. No pressure!",
+			"option1" : "Very impressive!",
+			"convo1" : 2,
+			"option2" : "This is it?!",
+			"convo2" : 3
 		}
     ],
 	[
-        {
+		{
 			"speaker" : "socky",
-			"dialog" : "we made it to conversation 1 by option 1",
-			"newSpeaker" : "true"
+			"dialog" : "DID YOU REALLY LIKE IT! :D"
 		},
 		{
-			"speaker" : "wilbur",
-			"dialog" : "I'm here too!",
-			"newSpeaker" : "true"
+			"speaker" : "socky",
+			"dialog" : "I knew you would. I can tell you're a special player. I'm sure you'll beat the game when it releases on steam in Summer of TBD!"
 		},
 		{
-			"speaker" : "dopey",
-			"dialog" : "conversation 1 is even better",
-			"newSpeaker" : "true",
-			"jump" : 3
+			"speaker" : "socky",
+			"dialog" : "Let's move, on shall we?",
+			"jump" : 4
 		}
-    ],
+
+	],
 	[
-        {
+		{
 			"speaker" : "socky",
-			"dialog" : "we made it to conversation 2 by option 2",
-			"newSpeaker" : "true"
+			"dialog" : "WHAT THE HECK DO YOU MEAN 'THIS IS IT'?!"
 		},
 		{
-			"speaker" : "dopey",
-			"dialog" : "conversation 2 is even better-er",
-			"newSpeaker" : "true",
-			"jump" : 3
+			"speaker" : "carlos",
+			"dialog" : "Woooah... Maybe take it down a notch Socky. You don't want to leave a bad first impression with our new fan!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "You're right... I just don't know how to feel about having my game insulted..."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Let's move, on shall we?"
 		}
-    ],
+
+	],
 	[
-        {
+		{
 			"speaker" : "socky",
-			"dialog" : "Conversation 3, thus ends the demo",
-			"newSpeaker" : "true"
+			"dialog" : "Now, you might've noticed that--"
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "WAIT! I wanna select a different option!!!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Seriously..."
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "Please...",
+			"option1" : "Yeah, let's go again!",
+			"convo1" : 5,
+			"option2" : "I'm OK, let's move on.",
+			"convo2" : 6
+		}
+	],
+	[
+		{
+			"speaker" : "dave",
+			"dialog" : "YES! You won't regret this!",
+			"jump" : 1
+		}
+	],
+	[
+		{
+			"speaker" : "dave",
+			"dialog" : "dangit."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "As I was saying... you might've noticed that your spacebar input is paused when you're presented with choices."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "This way, you can't advance the dialogue and skip ahead to some spicy gossip you're not meant to hear!"
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "Take it from me, you're not missing anything."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "When you click a text option, the dialogue 'jumps' to a specific conversation. Typically, the end of these unique conversations will trigger a 'jump' back to a single converging conversation."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "It's not immediately obvious, but choices can also change how the game and story plays out in the long run. Specifically, choices can change a character's state in the other part of this game."
 		},
 		{
 			"speaker" : "dopey",
-			"dialog" : "hooray!",
-			"newSpeaker" : "true"
+			"dialog" : "What's the 'other part' of the game? I'm so curious!"
 		}
-    ]
+
+	]
 ]

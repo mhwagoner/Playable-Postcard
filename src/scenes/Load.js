@@ -24,6 +24,11 @@ class Load extends Phaser.Scene {
         this.load.image('X', 'red_x.png')
         this.load.image('O', 'red_o.png')
 
+        //load audio
+        this.load.audio('sfx-write1', 'write1.mp3')
+        this.load.audio('sfx-write2', 'write2.mp3')
+        this.load.audio('card_flip', 'card_flip.mp3')
+        this.load.audio('bgm-text', 'Imagho-Camping.mp3')
 
         //load fonts
         this.load.bitmapFont('lr_font', 'font/Lovely_Rose.png', 'font/Lovely_Rose.xml')
