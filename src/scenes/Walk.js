@@ -62,6 +62,8 @@ class Walk extends Phaser.Scene {
 
     advanceScene(nextScene) {
         this.sceneElements.clear(true, true)
+
+        console.log(this.sceneElements)
         this.currScene = nextScene
 
         //play footstep sfx
@@ -118,7 +120,8 @@ class Walk extends Phaser.Scene {
             })
         }
 
-        this.sceneElements.add(this.arrow1, this.arrow2)
+        this.sceneElements.add(this.arrow1)
+        this.sceneElements.add(this.arrow2)
     }
 
     playSFX(sfxKey){
