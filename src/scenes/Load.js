@@ -60,7 +60,14 @@ class Load extends Phaser.Scene {
 
         //set initial locations for characters using registry (a location can be set as 'dead' to indicate their death)
         this.registry.set({
-            socky: 'swamp'
+            socky: 'out',
+            doug: 'out',
+            dopey: 'out',
+            dave: 'out',
+            miguel: 'out',
+            carlos: 'out',
+            wolfgang: 'out',
+            wilbur: 'dead'
         })
 
         // proceed once loading completes
