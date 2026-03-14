@@ -246,8 +246,8 @@ class Text extends Phaser.Scene {
             //change speaker's location (if applicable)
             if(this.dialog[this.dialogConvo][this.dialogLine-1]['location' + numOption]){ //location1 stores the location option 2 changes
                 let newLocation = this.dialog[this.dialogConvo][this.dialogLine-1]['location' + numOption]
-                this.data.set(this.dialogSpeaker, newLocation)
-                console.log(this.dialogSpeaker + " moved to: " + this.data.get(this.dialogSpeaker))
+                this.registry.set(this.dialogSpeaker, newLocation)
+                console.log(this.dialogSpeaker + " moved to: " + this.registry.get(this.dialogSpeaker))
             }
             
             //change to new conversation

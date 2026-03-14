@@ -8,6 +8,7 @@ class Load extends Phaser.Scene {
         this.load.path = './assets/'
         this.load.image('card_text', 'postcard_text.png')
         this.load.image('card_img', 'postcard_image.png')
+        this.load.image('card_border', 'card_back_border.png')
 
         //stamp profiles
         this.load.image('dopey', 'dopey_profile.png')
@@ -60,17 +61,18 @@ class Load extends Phaser.Scene {
 
         //set initial locations for characters using registry (a location can be set as 'dead' to indicate their death)
         this.registry.set({
-            socky: 'out',
-            doug: 'out',
-            dopey: 'out',
-            dave: 'out',
-            miguel: 'out',
-            carlos: 'out',
-            wolfgang: 'out',
-            wilbur: 'dead'
+            character: '',
+            socky: 'd',
+            doug: 'ead',
+            dopey: 'dad',
+            dave: 'dead',
+            miguel: 'dad',
+            carlos: 'dad',
+            wolfgang: 'ead',
+            wilbur: 'ded'
         })
 
         // proceed once loading completes
-        this.scene.start('walkScene')
+        this.scene.start('campfireScene')
     }
 }

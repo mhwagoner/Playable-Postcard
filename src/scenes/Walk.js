@@ -3,8 +3,23 @@ class Walk extends Phaser.Scene {
         super("walkScene")
     }
 
+    init() {
+        this.FAR_LEFT = config.width / 6
+        this.LEFT = config.width / 3
+        this.CENTER_X = config.width / 2
+        this.RIGHT = config.width*2 / 3
+        this.FAR_RIGHT = config.width*5 / 6
+
+        this.TOP = config.height / 6
+        this.UP = config.height / 3
+        this.CENTER_Y = config.height / 2
+        this.DOWN = config.height*2 / 3
+        this.BOTTOM = config.height*5 / 6
+
+    }
+
     create() {
-        this.cardBack = this.add.image(0, 0, 'card_img').setOrigin(0)
+        this.cardBack = this.add.image(0, 0, 'card_border').setOrigin(0).setDepth(11)
         this.flashlight = this.physics.add.sprite(0, 0, 'flashlight_img').setOrigin(0.5).setDepth(10)
 
         //initialize first scene
@@ -22,16 +37,19 @@ class Walk extends Phaser.Scene {
 
         this.deathText = this.add.bitmapText(config.width/2, config.height/2, 'lr_font', '', 40).setOrigin(0.5).setDepth(11)
         this.deathText.maxWidth = 800
+
+        //this.add.image(this.LEFT, this.BOTTOM, 'arrow')
+
     }
 
     update() {
 
         //move flashlight sprite IF certain distance away from pointer
-        if(Math.abs(this.flashlight.x - this.input.activePointer.x) <= 5 || Math.abs(this.flashlight.y - this.input.activePointer.y) <= 5){
+        if(Math.abs(this.flashlight.x - this.input.activePointer.x) <= 15 || Math.abs(this.flashlight.y - this.input.activePointer.y) <= 15){
             this.physics.moveToObject(this.flashlight, this.input.activePointer, 0)
         }
-        if(Math.abs(this.flashlight.x - this.input.activePointer.x) > 5 || Math.abs(this.flashlight.y - this.input.activePointer.y) > 5){
-            this.physics.moveToObject(this.flashlight, this.input.activePointer, 300)
+        if(Math.abs(this.flashlight.x - this.input.activePointer.x) > 15 || Math.abs(this.flashlight.y - this.input.activePointer.y) > 15){
+            this.physics.moveToObject(this.flashlight, this.input.activePointer, 500)
         }
 
         if(this.currScene == 'trees_death'){
@@ -71,19 +89,19 @@ class Walk extends Phaser.Scene {
         this.sound.play('sfx-footstep' + footstepNum)
         
         //set background image
-        let nextSceneBackground = this.add.image(25, 25, nextScene).setOrigin(0).setScale(0.9)
+        let nextSceneBackground = this.add.image(0, 0, nextScene).setOrigin(0)
         this.sceneElements.add(nextSceneBackground)
         
         //add arrow(s)
         if(nextScene == 'merrill_choice'){
-            this.arrow1 = this.add.image(200, 150, 'arrow').setAngle(-90).setScale(0.05)
+            this.arrow1 = this.add.image(200, 150, 'arrow')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('trees')
                 console.log("trees")
             })
             
-            this.arrow2 = this.add.image(700, 400, 'arrow').setAngle(-45).setScale(0.05)
+            this.arrow2 = this.add.image(700, 400, 'arrow')
             this.arrow2.setInteractive()
             this.arrow2.on('pointerdown', () => {
                 this.advanceScene('merrill_entrance')
@@ -91,28 +109,28 @@ class Walk extends Phaser.Scene {
             })
             
         } else if (nextScene == 'trees'){
-            this.arrow1 = this.add.image(300, 300, 'arrow').setAngle(0).setScale(0.05)
+            this.arrow1 = this.add.image(300, 300, 'arrow')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('trees_death')
                 console.log("trees_death")
             })
         } else if (nextScene == 'merrill_entrance'){
-            this.arrow1 = this.add.image(300, 400, 'arrow').setAngle(0).setScale(0.05)
+            this.arrow1 = this.add.image(300, 400, 'arrow')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('merrill_hallway')
                 console.log("merrill_hallway")
             })
         } else if (nextScene == 'merrill_hallway'){
-            this.arrow1 = this.add.image(450, 500, 'arrow').setAngle(-90).setScale(0.05)
+            this.arrow1 = this.add.image(450, 500, 'arrow')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('classroom_entrance')
                 console.log("classroom_entrance")
             })
         } else if (nextScene == 'classroom_entrance'){
-            this.arrow1 = this.add.image(100, 300, 'arrow').setAngle(0).setScale(0.05)
+            this.arrow1 = this.add.image(100, 300, 'arrow')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('classroom')
