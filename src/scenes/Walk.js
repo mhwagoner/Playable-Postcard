@@ -31,6 +31,7 @@ class Walk extends Phaser.Scene {
             runChildUpdate: true
         })
 
+        this.dead = false
         this.currScene = ''
         this.sfxPlayed = false
         this.deathText = this.add.bitmapText(config.width/2, config.height/2, 'lr_font', '', 40).setOrigin(0.5).setDepth(12)
@@ -40,6 +41,8 @@ class Walk extends Phaser.Scene {
         //go to the scene that the chosen character is currently in
         this.advanceScene(this.registry.get(this.registry.get('character')))
 
+        // setup keyboard input
+        cursors = this.input.keyboard.createCursorKeys()
     }
 
     update() {
@@ -49,6 +52,10 @@ class Walk extends Phaser.Scene {
         }
         if(Math.abs(this.flashlight.x - this.input.activePointer.x) > 15 || Math.abs(this.flashlight.y - this.input.activePointer.y) > 15){
             this.physics.moveToObject(this.flashlight, this.input.activePointer, 500)
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(cursors.space) && this.dead) {
+            this.scene.start('textScene')
         }
     }
 
@@ -140,6 +147,7 @@ class Walk extends Phaser.Scene {
     }
 
     killActiveCharacter(sfxKey){
+        this.dead = true
         this.flashlight.setTexture('eyes').setScale(0.7)
         this.registry.set(this.registry.get('character'), 'dead')
         //console.log(this.registry.get('character'))

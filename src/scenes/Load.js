@@ -82,6 +82,6 @@ class Load extends Phaser.Scene {
         })
 
         // proceed once loading completes
-        this.scene.start('textScene')
+        this.scene.start('campfireScene')
     }
 }

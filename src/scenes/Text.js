@@ -18,7 +18,7 @@ class Text extends Phaser.Scene {
 
         this.OPTION_WIDTH = 300
         this.OPTION_HEIGHT = 40
-        this.OPTION_X = 270*2             // x-position of options
+        this.OPTION_X = 500               // x-position of options
         this.OPTION1_Y = 115*2            // y-pos of option 1
         this.OPTION2_Y = 150*2            // y-pos of option 2
         this.OPTION3_Y = 185*2            // y-pos of option 3
@@ -79,12 +79,12 @@ class Text extends Phaser.Scene {
         this.wilbur = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'wilbur').setOrigin(1,0).setScale(0.75)
 
         //initialize dialog text objects
-        this.dialogText = this.add.bitmapText(this.TEXT_X, this.TEXT_Y, this.MAIN_FONT, '', this.TEXT_SIZE)
-        this.nextText = this.add.bitmapText(this.NEXT_X, this.NEXT_Y, this.MAIN_FONT, '', this.TEXT_SIZE)
-        this.option1Text = this.add.bitmapText(this.OPTION_X, this.OPTION1_Y, this.MAIN_FONT, '', this.OPTION_TEXT_SIZE).setOrigin(0,1)
-        this.option2Text = this.add.bitmapText(this.OPTION_X, this.OPTION2_Y, this.MAIN_FONT, '', this.OPTION_TEXT_SIZE).setOrigin(0,1)
-        this.option3Text = this.add.bitmapText(this.OPTION_X, this.OPTION3_Y, this.MAIN_FONT, '', this.OPTION_TEXT_SIZE).setOrigin(0,1)
-        this.option4Text = this.add.bitmapText(this.OPTION_X, this.OPTION4_Y, this.MAIN_FONT, '', this.OPTION_TEXT_SIZE).setOrigin(0,1)
+        this.dialogText = this.add.bitmapText(this.TEXT_X, this.TEXT_Y, this.MAIN_FONT, '', this.TEXT_SIZE).setTint(0x333333)
+        this.nextText = this.add.bitmapText(this.NEXT_X, this.NEXT_Y, this.MAIN_FONT, '', this.TEXT_SIZE).setTint(0x333333)
+        this.option1Text = this.add.bitmapText(this.OPTION_X, this.OPTION1_Y, this.MAIN_FONT, '', this.OPTION_TEXT_SIZE).setOrigin(0,1).setTint(0x333333)
+        this.option2Text = this.add.bitmapText(this.OPTION_X, this.OPTION2_Y, this.MAIN_FONT, '', this.OPTION_TEXT_SIZE).setOrigin(0,1).setTint(0x333333)
+        this.option3Text = this.add.bitmapText(this.OPTION_X, this.OPTION3_Y, this.MAIN_FONT, '', this.OPTION_TEXT_SIZE).setOrigin(0,1).setTint(0x333333)
+        this.option4Text = this.add.bitmapText(this.OPTION_X, this.OPTION4_Y, this.MAIN_FONT, '', this.OPTION_TEXT_SIZE).setOrigin(0,1).setTint(0x333333)
 
         //make options interactive
         const optionHitbox = new Phaser.Geom.Rectangle(0, 0, this.OPTION_WIDTH, this.OPTION_HEIGHT);
@@ -222,7 +222,7 @@ class Text extends Phaser.Scene {
                             }
                         } else { // if no options, advance like normal
                             // show prompt for more text
-                            this.nextText = this.add.bitmapText(this.NEXT_X, this.NEXT_Y, this.MAIN_FONT, this.NEXT_TEXT, this.TEXT_SIZE).setOrigin(0.5)
+                            this.nextText = this.add.bitmapText(this.NEXT_X, this.NEXT_Y, this.MAIN_FONT, this.NEXT_TEXT, this.TEXT_SIZE).setOrigin(0.5).setTint(0x333333)
                             this.dialogTyping = false   // un-lock input
                         }
 

@@ -45,9 +45,9 @@
 		{
 			"speaker" : "socky",
 			"dialog" : "Ta-da!!! Just go ahead and click on the option that feels right to you. No pressure!",
-			"option1" : "Very impressive!",
+			"option1" : "--- Very impressive!",
 			"convo1" : 2,
-			"option2" : "This is it?!",
+			"option2" : "--- This is it?!",
 			"convo2" : 3
 		}
     ],
@@ -102,9 +102,9 @@
 		{
 			"speaker" : "dave",
 			"dialog" : "Please...",
-			"option1" : "Yeah, let's go again!",
+			"option1" : "--- Yeah, let's go again!",
 			"convo1" : 5,
-			"option2" : "I'm OK, let's move on.",
+			"option2" : "--- I'm OK, let's move on.",
 			"convo2" : 6
 		}
 	],
