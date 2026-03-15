@@ -20,7 +20,8 @@ class Walk extends Phaser.Scene {
 
     create() {
         this.cardBack = this.add.image(0, 0, 'card_border').setOrigin(0).setDepth(11)
-        this.flashlight = this.physics.add.sprite(0, 0, 'flashlight_img').setOrigin(0.5).setDepth(10)
+        this.flashImage = this.registry.get('character') + '_flash'
+        this.flashlight = this.physics.add.sprite(config.width/2, config.height/2, this.flashImage).setOrigin(0.5).setDepth(10).setScale(1)
 
         //initialize first scene
         this.sceneElements = this.add.group({
@@ -35,7 +36,7 @@ class Walk extends Phaser.Scene {
         this.deathTimer = 500
         this.sfxPlayed = false
 
-        this.deathText = this.add.bitmapText(config.width/2, config.height/2, 'lr_font', '', 40).setOrigin(0.5).setDepth(11)
+        this.deathText = this.add.bitmapText(config.width/2, config.height/2, 'lr_font', '', 40).setOrigin(0.5).setDepth(12)
         this.deathText.maxWidth = 800
 
         //this.add.image(this.LEFT, this.BOTTOM, 'arrow')
@@ -52,7 +53,7 @@ class Walk extends Phaser.Scene {
             this.physics.moveToObject(this.flashlight, this.input.activePointer, 500)
         }
 
-        if(this.currScene == 'trees_death'){
+        if(this.currScene == 'g'){
             this.deathText.text = "A tree fell on you and knocked you out! Your body was cleared away by a groundskeeper the next morning.       GAME OVER"
             this.playSFX('sfx-tree')
             /*let sfxPlaying = false
@@ -66,7 +67,7 @@ class Walk extends Phaser.Scene {
             }else{
                 this.deathText.text = "A tree fell on you and knocked you out!"
             }*/
-        } else if (this.currScene == 'classroom'){
+        } else if (this.currScene == 'g'){
             this.deathText.text = "You, the playtester, were stabbed by a hidden goblin! You're dead! How are you even reading this? GAME OVER."
             this.playSFX('sfx-knife')
             /*timer to death message
@@ -81,7 +82,6 @@ class Walk extends Phaser.Scene {
     advanceScene(nextScene) {
         this.sceneElements.clear(true, true)
 
-        console.log(this.sceneElements)
         this.currScene = nextScene
 
         //play footstep sfx
@@ -92,57 +92,82 @@ class Walk extends Phaser.Scene {
         let nextSceneBackground = this.add.image(0, 0, nextScene).setOrigin(0)
         this.sceneElements.add(nextSceneBackground)
         
+        /*ARROWS TO MOVE BETWEEN AREAS:
+        -add arrow image
+        -make arrow interactive
+        -on pointerdown, trigger this.scene() with next area name as argument
+        -up to two arrows
+        */
+
         //add arrow(s)
-        if(nextScene == 'merrill_choice'){
+        if(this.currScene == 'merrill_choice'){
+            //arrow 1
             this.arrow1 = this.add.image(200, 150, 'arrow')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('trees')
-                console.log("trees")
             })
             
+            //arrow 2
             this.arrow2 = this.add.image(700, 400, 'arrow')
             this.arrow2.setInteractive()
             this.arrow2.on('pointerdown', () => {
                 this.advanceScene('merrill_entrance')
-                console.log("merril building")
             })
             
-        } else if (nextScene == 'trees'){
+        } else if (this.currScene == 'trees'){
+            //arrow 1
             this.arrow1 = this.add.image(300, 300, 'arrow')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('trees_death')
-                console.log("trees_death")
             })
-        } else if (nextScene == 'merrill_entrance'){
+
+        } else if (this.currScene == 'merrill_entrance'){
+            //arrow 1
             this.arrow1 = this.add.image(300, 400, 'arrow')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('merrill_hallway')
-                console.log("merrill_hallway")
             })
-        } else if (nextScene == 'merrill_hallway'){
+
+        } else if (this.currScene == 'merrill_hallway'){
+            //arrow 1
             this.arrow1 = this.add.image(450, 500, 'arrow')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('classroom_entrance')
-                console.log("classroom_entrance")
             })
-        } else if (nextScene == 'classroom_entrance'){
+
+        } else if (this.currScene == 'classroom_entrance'){
+            //arrow 1
             this.arrow1 = this.add.image(100, 300, 'arrow')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('classroom')
-                console.log("classroom")
             })
+
+        } else if (this.currScene == 'classroom'){
+            //death
+            this.deathText.text = "You, the playtester, were stabbed by a hidden goblin! You're dead! How are you even reading this? GAME OVER."            
+            this.killActiveCharacter('sfx-knife')
+
+        } else if (this.currScene == 'trees_death'){
+            //death
+            this.deathText.text = "A tree fell on you and knocked you out! Your body was cleared away by a groundskeeper the next morning.       GAME OVER"
+            this.killActiveCharacter('sfx-tree')
         }
 
         this.sceneElements.add(this.arrow1)
         this.sceneElements.add(this.arrow2)
     }
 
-    playSFX(sfxKey){
+    killActiveCharacter(sfxKey){
+        this.flashlight.setTexture('eyes').setScale(0.7)
+        this.registry.set(this.registry.get('character'), 'dead')
+        //console.log(this.registry.get('character'))
+        //console.log(this.registry.get(this.registry.get('character')))
+
         if (this.sfxPlayed == false){
             this.sound.play(sfxKey)
             this.sfxPlayed = true

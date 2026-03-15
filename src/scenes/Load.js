@@ -43,8 +43,17 @@ class Load extends Phaser.Scene {
         this.load.json('dialog', 'json/dialog.json')
 
         //walking scenes
-        this.load.image('flashlight_img', 'flashlight.png')
         this.load.image('arrow', 'arrow.png')
+        this.load.image('eyes', 'eye_light.png')
+
+        this.load.image('socky_flash', 'flashlight_socky.png')
+        this.load.image('doug_flash', 'flashlight_doug.png')
+        this.load.image('dopey_flash', 'flashlight_dopey.png')
+        this.load.image('dave_flash', 'flashlight_dave.png')
+        this.load.image('carlos_flash', 'flashlight_carlos.png')
+        this.load.image('miguel_flash', 'flashlight_miguel.png')
+        this.load.image('wolfgang_flash', 'flashlight_wolfgang.png')
+        this.load.image('wilbur_flash', 'flashlight_wilbur.png')
 
         this.load.image('merrill_choice', 'merrill_choice.png')
         this.load.image('classroom_entrance', 'classroom_entrance.png')
@@ -62,14 +71,14 @@ class Load extends Phaser.Scene {
         //set initial locations for characters using registry (a location can be set as 'dead' to indicate their death)
         this.registry.set({
             character: '',
-            socky: 'd',
-            doug: 'ead',
-            dopey: 'dad',
-            dave: 'dead',
-            miguel: 'dad',
-            carlos: 'dad',
-            wolfgang: 'ead',
-            wilbur: 'ded'
+            socky: 'y',
+            doug: 'out',
+            dopey: 'out',
+            dave: 'out',
+            miguel: 'out',
+            carlos: 'out',
+            wolfgang: 'out',
+            wilbur: 'out'
         })
 
         // proceed once loading completes
