@@ -48,7 +48,8 @@ class Text extends Phaser.Scene {
     }
 
     create() {
-        //console.log(this.registry.get('name'))
+        this.dialogConvo = this.registry.get('dialogConvo')
+        
         //load background image
         this.background = this.add.image(0, 0, 'card_text').setOrigin(0,0)
 
@@ -140,11 +141,15 @@ class Text extends Phaser.Scene {
         */
 
         // make sure there are lines left to read in this conversation, otherwise jump to next conversation
+        // if 'jump' in dialog.json is "walk", jump to campfire scene
+        // if 'speaker' is dead, skip their line
         if(this.dialogLine > this.dialog[this.dialogConvo].length - 1) {
-            
             if(this.dialog[this.dialogConvo][this.dialogLine-1]['jump']){
-                console.log('jumped')
-                this.dialogConvo = this.dialog[this.dialogConvo][this.dialogLine-1]['jump']
+                if(this.dialog[this.dialogConvo][this.dialogLine-1]['jump'] == "walk"){
+                    this.scene.start('campfireScene')
+                } else {
+                    this.dialogConvo = this.dialog[this.dialogConvo][this.dialogLine-1]['jump']
+                }
             } else {
                 this.dialogConvo++
             }
@@ -156,23 +161,15 @@ class Text extends Phaser.Scene {
             
             console.log('End of Conversations')
 
+            //would be the end of the game
             this.scene.start('campfireScene')
-            
-            // tween out prior speaker's image and return to title screen
-            if(this.dialogLastSpeaker) {
-                /*this.tweens.add({
-                    targets: this[this.dialogLastSpeaker],
-                    x: this.OFFSCREEN_X,
-                    duration: this.tweenDuration,
-                    ease: 'Linear',
-                    onComplete: () => {
-                        this.dialogbox.visible = false
-                        this.scene.start('titleScene')
-                    }
-                })*/
-            }
+
+        } else if (this.registry.get(this.dialog[this.dialogConvo][this.dialogLine]['speaker']) == 'dead'){
+            //speaker is dead, so should be skipped
+            this.dialogLine++
+            this.typeText()
         } else {
-            // ...if we still have conversations left, set current speaker
+            // ...if we still have conversations left and next speaker is alive, set current speaker
             this.dialogSpeaker = this.dialog[this.dialogConvo][this.dialogLine]['speaker']
             console.log(this.dialogSpeaker)
 
