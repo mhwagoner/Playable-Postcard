@@ -49,7 +49,7 @@ class Text extends Phaser.Scene {
 
     create() {
         this.dialogConvo = this.registry.get('dialogConvo')
-        
+
         //load background image
         this.background = this.add.image(0, 0, 'card_text').setOrigin(0,0)
 
@@ -118,6 +118,7 @@ class Text extends Phaser.Scene {
     }
 
     typeText() {
+        console.log(this.dialogConvo + " " + this.dialogLine)
         // lock input while typing
         this.dialogTyping = true
 

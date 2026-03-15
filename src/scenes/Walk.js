@@ -150,8 +150,11 @@ class Walk extends Phaser.Scene {
         this.dead = true
         this.flashlight.setTexture('eyes').setScale(0.7)
         this.registry.set(this.registry.get('character'), 'dead')
-        //console.log(this.registry.get('character'))
-        //console.log(this.registry.get(this.registry.get('character')))
+
+        //conditions for which convo to return to
+        if(this.registry.get('character') == 'wilbur'){
+            this.registry.set('dialogConvo', 10)
+        }
 
         if (this.sfxPlayed == false){
             this.sound.play(sfxKey)

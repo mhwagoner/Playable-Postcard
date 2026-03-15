@@ -72,13 +72,13 @@ class Load extends Phaser.Scene {
         this.registry.set({
             character: '',
             dialogConvo: 0,
-            socky: 'merrill_choice',
+            socky: 'out',
             doug: 'out',
             dopey: 'out',
             dave: 'out',
             miguel: 'out',
             carlos: 'out',
-            wolfgang: 'dead',
+            wolfgang: 'out',
             wilbur: 'out'
         })
 
