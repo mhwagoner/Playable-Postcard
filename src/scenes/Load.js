@@ -71,7 +71,7 @@ class Load extends Phaser.Scene {
         //set initial locations for characters using registry (a location can be set as 'dead' to indicate their death)
         this.registry.set({
             character: '',
-            socky: 'y',
+            socky: 'merrill_choice',
             doug: 'out',
             dopey: 'out',
             dave: 'out',
@@ -82,6 +82,6 @@ class Load extends Phaser.Scene {
         })
 
         // proceed once loading completes
-        this.scene.start('campfireScene')
+        this.scene.start('textScene')
     }
 }

@@ -23,7 +23,7 @@ class Walk extends Phaser.Scene {
         this.flashImage = this.registry.get('character') + '_flash'
         this.flashlight = this.physics.add.sprite(config.width/2, config.height/2, this.flashImage).setOrigin(0.5).setDepth(10).setScale(1)
 
-        //initialize first scene
+        //initialize scene elements group to store the background and arrows
         this.sceneElements = this.add.group({
             classType: Phaser.Physics.Arcade.Sprite,
             active: true,
@@ -32,50 +32,23 @@ class Walk extends Phaser.Scene {
         })
 
         this.currScene = ''
-        this.advanceScene('merrill_choice')
-        this.deathTimer = 500
         this.sfxPlayed = false
-
         this.deathText = this.add.bitmapText(config.width/2, config.height/2, 'lr_font', '', 40).setOrigin(0.5).setDepth(12)
         this.deathText.maxWidth = 800
 
-        //this.add.image(this.LEFT, this.BOTTOM, 'arrow')
+        console.log(this.registry.get(this.registry.get('character')))
+        //go to the scene that the chosen character is currently in
+        this.advanceScene(this.registry.get(this.registry.get('character')))
 
     }
 
     update() {
-
         //move flashlight sprite IF certain distance away from pointer
         if(Math.abs(this.flashlight.x - this.input.activePointer.x) <= 15 || Math.abs(this.flashlight.y - this.input.activePointer.y) <= 15){
             this.physics.moveToObject(this.flashlight, this.input.activePointer, 0)
         }
         if(Math.abs(this.flashlight.x - this.input.activePointer.x) > 15 || Math.abs(this.flashlight.y - this.input.activePointer.y) > 15){
             this.physics.moveToObject(this.flashlight, this.input.activePointer, 500)
-        }
-
-        if(this.currScene == 'g'){
-            this.deathText.text = "A tree fell on you and knocked you out! Your body was cleared away by a groundskeeper the next morning.       GAME OVER"
-            this.playSFX('sfx-tree')
-            /*let sfxPlaying = false
-            if(!sfxPlaying) {
-                sfxPlaying = true
-                //this.sound.play('sfx-write2')
-            }
-            //timer to death message
-            if(this.deathTimer > 0){
-                this.deathTimer--
-            }else{
-                this.deathText.text = "A tree fell on you and knocked you out!"
-            }*/
-        } else if (this.currScene == 'g'){
-            this.deathText.text = "You, the playtester, were stabbed by a hidden goblin! You're dead! How are you even reading this? GAME OVER."
-            this.playSFX('sfx-knife')
-            /*timer to death message
-            if(this.deathTimer > 0){
-                this.deathTimer--
-            }else{
-                this.deathText.text = "A tree fell on you and knocked you out!"
-            }*/
         }
     }
 
@@ -158,8 +131,12 @@ class Walk extends Phaser.Scene {
             this.killActiveCharacter('sfx-tree')
         }
 
-        this.sceneElements.add(this.arrow1)
-        this.sceneElements.add(this.arrow2)
+        if(this.arrow1){
+            this.sceneElements.add(this.arrow1)
+        } 
+        if(this.arrow2) {
+            this.sceneElements.add(this.arrow2)
+        }
     }
 
     killActiveCharacter(sfxKey){
