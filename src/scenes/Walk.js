@@ -23,6 +23,7 @@ class Walk extends Phaser.Scene {
         this.crushed = false
         this.knockedOut = false
         this.suffocated = false
+        this.shot = false
         this.keyCollected = false
 
     }
@@ -334,6 +335,10 @@ class Walk extends Phaser.Scene {
             })
 
         } else if (this.currScene == 'shore_2'){
+            if(this.registry.get('character') == 'socky'){
+                this.keyCollected = true
+                this.deathText.text = "Socky's keen eyes noticed something shiny in the sand. It's a key!"
+            }
             //arrow 1
             this.arrow1 = this.add.image(this.COL3, this.ROW5, 'arrow_down')
             this.arrow1.setInteractive()
@@ -346,23 +351,21 @@ class Walk extends Phaser.Scene {
             this.arrow1 = this.add.image(this.COL4, this.ROW4, 'arrow_up')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
-                this.advanceScene('field_8')
-            })
-
-        } else if (this.currScene == 'field_8'){
-            //arrow 1
-            this.arrow1 = this.add.image(this.COL3, this.ROW5, 'arrow_up')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
                 this.advanceScene('forest_6')
             })
 
         } else if (this.currScene == 'forest_6'){
             //arrow 1
-            this.arrow1 = this.add.image(this.COL2, this.ROW4, 'arrow_up')
+            this.arrow1 = this.add.image(this.COL3, this.ROW4, 'arrow_up')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('forest_8')
+            })
+            //arrow 2
+            this.arrow2 = this.add.image(this.COL1, this.ROW3, 'arrow_up')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
+                this.advanceScene('field_8')
             })
 
         } else if (this.currScene == 'forest_8'){
@@ -546,6 +549,26 @@ class Walk extends Phaser.Scene {
                     this.advanceScene('forest_13')
                 })
             }
+        } else if (this.currScene == 'field_8'){
+            //death
+            if(this.shot == false){
+                this.shot = true
+                this.deathText.text = this.registry.get('character') + " was awestruck by the beauty of the scenery long enough for his attacker to line up a shot. A sharp pain went down " + this.registry.get('character') + "'s back as a blowdart penetrated his neck."
+                this.killActiveCharacter('sfx-shot')
+            } else {
+                //arrow 1
+                this.arrow1 = this.add.image(this.COL3, this.ROW5, 'arrow_down')
+                this.arrow1.setInteractive()
+                this.arrow1.on('pointerdown', () => {
+                    this.advanceScene('forest_6')
+                })
+            }
+
+        } else if (this.currScene == 'cabin_interior'){
+            //socky confronts heebee
+            this.dead = true
+            this.deathText.text = "Press [Space] to confront Heebee."
+            //this.registry.set('dialogConvo', 10)
         }
 
         if(this.arrow1){

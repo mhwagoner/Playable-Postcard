@@ -42,6 +42,7 @@ class Load extends Phaser.Scene {
         this.load.audio('sfx-crushed', 'crushed.mp3')
         this.load.audio('sfx-burned', 'burned.mp3')
         this.load.audio('sfx-fall', 'fall.mp3')
+        this.load.audio('sfx-shot', 'shot.mp3')
 
         //load fonts
         this.load.bitmapFont('lr_font', 'font/Lovely_Rose.png', 'font/Lovely_Rose.xml')
@@ -115,7 +116,7 @@ class Load extends Phaser.Scene {
         this.registry.set({
             character: '',
             dialogConvo: 0,
-            socky: 'out',
+            socky: 'tent_1',
             doug: 'tent_1',
             dopey: 'out',
             dave: 'out',
