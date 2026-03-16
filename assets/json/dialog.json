@@ -1,11 +1,11 @@
 [
     [
         {
-			"speaker" : "socky",
+			"speaker" : "shadow",
 			"dialog" : "Hello there valued reader. My name is Socky the Sock. Welcome to Michael's Playable Postcard Demonstration."
 		},
 		{
-			"speaker" : "wolfgang",
+			"speaker" : "heebee",
 			"dialog" : "Why are you writing the text white on tan? You're going to make us blind!"
 		},
 		{

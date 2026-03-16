@@ -16,6 +16,15 @@ class Walk extends Phaser.Scene {
         this.DOWN = config.height*2 / 3
         this.BOTTOM = config.height*5 / 6
 
+        this.drowned = false
+        this.burned = false
+        this.pushed = false
+        this.stabbed = false
+        this.crushed = false
+        this.knockedOut = false
+        this.suffocated = false
+        this.keyCollected = false
+
     }
 
     create() {
@@ -82,14 +91,14 @@ class Walk extends Phaser.Scene {
         //add arrow(s)
         if(this.currScene == 'merrill_choice'){
             //arrow 1
-            this.arrow1 = this.add.image(200, 150, 'arrow')
+            this.arrow1 = this.add.image(200, 150, 'arrow_up')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('trees')
             })
             
             //arrow 2
-            this.arrow2 = this.add.image(700, 400, 'arrow')
+            this.arrow2 = this.add.image(700, 400, 'arrow_up')
             this.arrow2.setInteractive()
             this.arrow2.on('pointerdown', () => {
                 this.advanceScene('merrill_entrance')
@@ -97,7 +106,7 @@ class Walk extends Phaser.Scene {
             
         } else if (this.currScene == 'trees'){
             //arrow 1
-            this.arrow1 = this.add.image(300, 300, 'arrow')
+            this.arrow1 = this.add.image(300, 300, 'arrow_up')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('trees_death')
@@ -105,7 +114,7 @@ class Walk extends Phaser.Scene {
 
         } else if (this.currScene == 'merrill_entrance'){
             //arrow 1
-            this.arrow1 = this.add.image(300, 400, 'arrow')
+            this.arrow1 = this.add.image(300, 400, 'arrow_up')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('merrill_hallway')
@@ -113,7 +122,7 @@ class Walk extends Phaser.Scene {
 
         } else if (this.currScene == 'merrill_hallway'){
             //arrow 1
-            this.arrow1 = this.add.image(450, 500, 'arrow')
+            this.arrow1 = this.add.image(450, 500, 'arrow_up')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('classroom_entrance')
@@ -121,7 +130,7 @@ class Walk extends Phaser.Scene {
 
         } else if (this.currScene == 'classroom_entrance'){
             //arrow 1
-            this.arrow1 = this.add.image(100, 300, 'arrow')
+            this.arrow1 = this.add.image(100, 300, 'arrow_up')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
                 this.advanceScene('classroom')
@@ -143,6 +152,9 @@ class Walk extends Phaser.Scene {
         } 
         if(this.arrow2) {
             this.sceneElements.add(this.arrow2)
+        }
+        if(this.arrow3) {
+            this.sceneElements.add(this.arrow3)
         }
     }
 

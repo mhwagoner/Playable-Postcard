@@ -78,6 +78,8 @@ class Text extends Phaser.Scene {
         this.miguel = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'miguel').setOrigin(1,0).setScale(0.75)
         this.wolfgang = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'wolfgang').setOrigin(1,0).setScale(0.75)
         this.wilbur = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'wilbur').setOrigin(1,0).setScale(0.75)
+        this.shadow = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'shadow').setOrigin(1,0).setScale(0.75)
+        this.heebee = this.add.sprite(config.width - this.PROFILE_X, this.PROFILE_Y, 'heebee').setOrigin(1,0).setScale(0.75)
 
         //initialize dialog text objects
         this.dialogText = this.add.bitmapText(this.TEXT_X, this.TEXT_Y, this.MAIN_FONT, '', this.TEXT_SIZE).setTint(0x333333)

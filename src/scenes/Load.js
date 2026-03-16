@@ -19,6 +19,8 @@ class Load extends Phaser.Scene {
         this.load.image('miguel', 'miguel_profile.png')
         this.load.image('wolfgang', 'wolfgang_profile.png')
         this.load.image('wilbur', 'wilbur_profile.png')
+        this.load.image('heebee', 'heebee_profile.png')
+        this.load.image('shadow', 'shadow_profile.png')
 
         //campfire graphics
         this.load.image('campfire', 'campfire_graphic.png')
@@ -43,7 +45,8 @@ class Load extends Phaser.Scene {
         this.load.json('dialog', 'json/dialog.json')
 
         //walking scenes
-        this.load.image('arrow', 'arrow.png')
+        this.load.image('arrow_up', 'arrow_up.png')
+        this.load.image('arrow_down', 'arrow_down.png')
         this.load.image('eyes', 'eye_light.png')
 
         this.load.image('socky_flash', 'flashlight_socky.png')
@@ -55,13 +58,48 @@ class Load extends Phaser.Scene {
         this.load.image('wolfgang_flash', 'flashlight_wolfgang.png')
         this.load.image('wilbur_flash', 'flashlight_wilbur.png')
 
-        this.load.image('merrill_choice', 'merrill_choice.png')
-        this.load.image('classroom_entrance', 'classroom_entrance.png')
-        this.load.image('classroom', 'classroom.png')
-        this.load.image('trees', 'trees.png')
-        this.load.image('trees_death', 'trees_death.png')
-        this.load.image('merrill_entrance', 'merrill_entrance.png')
-        this.load.image('merrill_hallway', 'merrill_hallway.png')
+        //backgrounds
+        this.load.path = './assets/backgrounds'
+        this.load.image('cabin', 'cabin.png')
+        this.load.image('cabin_interior', 'cabin_interior.png')
+        this.load.image('cabin_exterior', 'cabin_exterior.png')
+        this.load.image('cliff', 'cliff.png')
+        this.load.image('dock', 'dock.png')
+        this.load.image('field_1', 'field_1.png')
+        this.load.image('field_2', 'field_2.png')
+        this.load.image('field_3', 'field_3.png')
+        this.load.image('field_4', 'field_4.png')
+        this.load.image('field_5', 'field_5.png')
+        this.load.image('field_6', 'field_6.png')
+        this.load.image('field_7', 'field_7.png')
+        this.load.image('field_8', 'field_8.png')
+        this.load.image('fire', 'fire.png')
+        this.load.image('forest_1', 'forest_1.png')
+        this.load.image('forest_2', 'forest_2.png')
+        this.load.image('forest_3', 'forest_3.png')
+        this.load.image('forest_4', 'forest_4.png')
+        this.load.image('forest_5', 'forest_5.png')
+        this.load.image('forest_6', 'forest_6.png')
+        this.load.image('forest_7', 'forest_7.png')
+        this.load.image('forest_8', 'forest_8.png')
+        this.load.image('forest_9', 'forest_9.png')
+        this.load.image('forest_10', 'forest_10.png')
+        this.load.image('forest_11', 'forest_11.png')
+        this.load.image('forest_12', 'forest_12.png')
+        this.load.image('forest_13', 'forest_13.png')
+        this.load.image('lake', 'lake.png')
+        this.load.image('lighthouse', 'lighthouse.png')
+        this.load.image('lighthouse_door', 'lighthouse_door.png')
+        this.load.image('mess_hall', 'mess_hall.png')
+        this.load.image('outhouse', 'outhouse.png')
+        this.load.image('shore_1', 'shore_1.png')
+        this.load.image('shore_2', 'shore_2.png')
+        this.load.image('stream', 'stream.png')
+        this.load.image('tent_1', 'tent_1.png')
+        this.load.image('tent_2', 'tent_2.png')
+        this.load.image('tent_3', 'tent_3.png')
+        this.load.image('waterfall', 'waterfall.png')
+
 
     }
 
