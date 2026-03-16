@@ -30,13 +30,18 @@ class Load extends Phaser.Scene {
         //load audio
         this.load.audio('sfx-write1', 'write1.mp3')
         this.load.audio('sfx-write2', 'write2.mp3')
-        this.load.audio('card_flip', 'card_flip.mp3')
+        this.load.audio('sfx-card_flip', 'card_flip.mp3')
         this.load.audio('bgm-text', 'Imagho-Camping.mp3')
         this.load.audio('sfx-footstep1', 'footstep1.mp3')
         this.load.audio('sfx-footstep2', 'footstep2.mp3')
         this.load.audio('sfx-footstep3', 'footstep3.mp3')
         this.load.audio('sfx-tree', 'tree.mp3')
         this.load.audio('sfx-knife', 'knife.mp3')
+        this.load.audio('sfx-drown', 'drowned.mp3')
+        this.load.audio('sfx-suffocated', 'suffocated.mp3')
+        this.load.audio('sfx-crushed', 'crushed.mp3')
+        this.load.audio('sfx-burned', 'burned.mp3')
+        this.load.audio('sfx-fall', 'fall.mp3')
 
         //load fonts
         this.load.bitmapFont('lr_font', 'font/Lovely_Rose.png', 'font/Lovely_Rose.xml')
@@ -59,7 +64,7 @@ class Load extends Phaser.Scene {
         this.load.image('wilbur_flash', 'flashlight_wilbur.png')
 
         //backgrounds
-        this.load.path = './assets/backgrounds'
+        this.load.path = './assets/backgrounds/'
         this.load.image('cabin', 'cabin.png')
         this.load.image('cabin_interior', 'cabin_interior.png')
         this.load.image('cabin_exterior', 'cabin_exterior.png')
@@ -111,7 +116,7 @@ class Load extends Phaser.Scene {
             character: '',
             dialogConvo: 0,
             socky: 'out',
-            doug: 'out',
+            doug: 'tent_1',
             dopey: 'out',
             dave: 'out',
             miguel: 'out',
@@ -121,6 +126,6 @@ class Load extends Phaser.Scene {
         })
 
         // proceed once loading completes
-        this.scene.start('textScene')
+        this.scene.start('campfireScene')
     }
 }

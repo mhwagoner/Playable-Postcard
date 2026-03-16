@@ -50,6 +50,9 @@ class Campfire extends Phaser.Scene {
         //load background image
         this.background = this.add.image(0, 0, 'campfire').setOrigin(0,0)
 
+        //play card flip sfx
+        this.sound.play('sfx-card_flip')
+
         //SOCKY
         if(this.registry.get('socky') == 'dead'){
             //add uninteractive red X
