@@ -106,9 +106,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('forest_2')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL5, this.ROW2, 'arrow_up')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL5, this.ROW2, 'arrow_up')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('forest_4')
             })
 
@@ -120,9 +120,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('forest_1')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL5, this.ROW5, 'arrow_down')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL5, this.ROW5, 'arrow_down')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('forest_3')
             })
 
@@ -134,9 +134,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('forest_3')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL4, this.ROW3, 'arrow_up')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL4, this.ROW3, 'arrow_up')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('field_1')
             })
 
@@ -156,9 +156,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('field_3')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL2, this.ROW4, 'arrow_up')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL2, this.ROW4, 'arrow_up')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('field_4')
             })
 
@@ -170,9 +170,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('cliff')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL3, this.ROW5, 'arrow_down')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL3, this.ROW5, 'arrow_down')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('field_2')
             })
 
@@ -184,9 +184,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('stream')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL5, this.ROW4, 'arrow_up')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL5, this.ROW4, 'arrow_up')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('field_5')
             })
 
@@ -198,9 +198,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('lake')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL5, this.ROW5, 'arrow_down')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL5, this.ROW5, 'arrow_down')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('field_4')
             })
 
@@ -212,9 +212,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('dock')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL3, this.ROW5, 'arrow_down')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL3, this.ROW5, 'arrow_down')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('stream')
             })
 
@@ -226,9 +226,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('forest_11')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL4, this.ROW5, 'arrow_up')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL4, this.ROW5, 'arrow_up')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('tent_1')
             })
 
@@ -240,9 +240,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('tent_2')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL4, this.ROW5, 'arrow_up')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL4, this.ROW5, 'arrow_up')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('forest_5')
             })
 
@@ -254,9 +254,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('tent_1')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL5, this.ROW5, 'arrow_up')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL5, this.ROW5, 'arrow_up')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('tent_3')
             })
 
@@ -276,9 +276,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('cabin_exterior')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL5, this.ROW5, 'arrow_up')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL5, this.ROW5, 'arrow_up')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('field_7')
             })
 
@@ -290,9 +290,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('cabin')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL3, this.ROW5, 'arrow_up')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL3, this.ROW5, 'arrow_up')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 if(this.keyCollected){this.advanceScene('cabin_interior')}
                 else{this.deathText.text = "Cabin is locked!"}
             })
@@ -313,9 +313,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('lighthouse_door')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL5, this.ROW5, 'arrow_up')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL5, this.ROW5, 'arrow_up')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('shore_1')
             })
 
@@ -327,9 +327,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('waterfall')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL3, this.ROW4, 'arrow_up')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL3, this.ROW4, 'arrow_up')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('shore_2')
             })
 
@@ -373,9 +373,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('forest_7')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL4, this.ROW4, 'arrow_up')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL4, this.ROW4, 'arrow_up')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('field_6')
             })
 
@@ -395,9 +395,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('forest_9')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL4, this.ROW5, 'arrow_down')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL4, this.ROW5, 'arrow_down')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('forest_8')
             })
 
@@ -425,9 +425,9 @@ class Walk extends Phaser.Scene {
                 this.advanceScene('forest_12')
             })
             //arrow 2
-            this.arrow1 = this.add.image(this.COL4, this.ROW5, 'arrow_down')
-            this.arrow1.setInteractive()
-            this.arrow1.on('pointerdown', () => {
+            this.arrow2 = this.add.image(this.COL4, this.ROW5, 'arrow_down')
+            this.arrow2.setInteractive()
+            this.arrow2.on('pointerdown', () => {
                 this.advanceScene('field_5')
             })
 
