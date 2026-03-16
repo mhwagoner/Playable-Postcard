@@ -123,7 +123,16 @@ class Load extends Phaser.Scene {
             miguel: 'out',
             carlos: 'out',
             wolfgang: 'out',
-            wilbur: 'out'
+            wilbur: 'out',
+            drowned: false,
+            burned: false,
+            pushed: false,
+            stabbed: false,
+            crushed: false,
+            knockedOut: false,
+            suffocated: false,
+            shot: false,
+            keyCollected: false
         })
 
         // proceed once loading completes

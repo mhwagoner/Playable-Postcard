@@ -16,16 +16,6 @@ class Walk extends Phaser.Scene {
         this.ROW4 = config.height*2 / 3
         this.ROW5 = config.height*5 / 6
 
-        this.drowned = false
-        this.burned = false
-        this.pushed = false
-        this.stabbed = false
-        this.crushed = false
-        this.knockedOut = false
-        this.suffocated = false
-        this.shot = false
-        this.keyCollected = false
-
     }
 
     create() {
@@ -452,8 +442,8 @@ class Walk extends Phaser.Scene {
 
         } else if (this.currScene == 'forest_1'){
             //death
-            if(this.knockedOut == false){
-                this.knockedOut = true
+            if(this.registry.get('knockedOut') == false){
+                this.registry.set('knockedOut', true)
                 this.deathText.text = this.registry.get('character') + " was struck and knocked out by a falling tree. Did someone push it down on purpose? "
                 this.killActiveCharacter('sfx-tree')
             } else {
@@ -466,8 +456,8 @@ class Walk extends Phaser.Scene {
             }
         } else if (this.currScene == 'cliff'){
             //death
-            if(this.pushed == false){
-                this.pushed = true
+            if(this.registry.get('pushed') == false){
+                this.registry.set('pushed', true)
                 this.deathText.text = this.registry.get('character') + " felt someone push them off the cliff's edge before plummeting to his demise. Who was that?"
                 this.killActiveCharacter('sfx-fall')
             } else {
@@ -480,8 +470,8 @@ class Walk extends Phaser.Scene {
             }
         } else if (this.currScene == 'dock'){
             //death
-            if(this.drowned == false){
-                this.drowned = true
+            if(this.registry.get('drowned') == false){
+                this.registry.set('drowned', true)
                 this.deathText.text = this.registry.get('character') + " was thrown off the side of the dock and held underwater until he ran out of oxygen. No one got a glimse of his murderer."
                 this.killActiveCharacter('sfx-drown')
             } else {
@@ -494,8 +484,8 @@ class Walk extends Phaser.Scene {
             }
         } else if (this.currScene == 'tent_3'){
             //death
-            if(this.stabbed == false){
-                this.stabbed = true
+            if(this.registry.get('stabbed') == false){
+                this.registry.set('stabbed', true)
                 this.deathText.text = this.registry.get('character') + " went to investigate the inside of the tent and was quickly trapped inside and stabbed to death by someone on the outside. Only the murderer's silhouette could be seen."
                 this.killActiveCharacter('sfx-knife')
             } else {
@@ -509,8 +499,8 @@ class Walk extends Phaser.Scene {
             }
         } else if (this.currScene == 'lighthouse_door'){
             //death
-            if(this.crushed == false){
-                this.crushed = true
+            if(this.registry.get('crushed') == false){
+                this.registry.set('crushed', true)
                 this.deathText.text = this.registry.get('character') + " approached the lighthouse door and, before he could react, a heavy object was dropped onto him from the top of the lighthouse. Who did this?"
                 this.killActiveCharacter('sfx-crushed')
             } else {
@@ -523,8 +513,8 @@ class Walk extends Phaser.Scene {
             }
         } else if (this.currScene == 'fire'){
             //death
-            if(this.burned == false){
-                this.burned = true
+            if(this.registry.get('burned') == false){
+                this.registry.set('burned', true)
                 this.deathText.text = this.registry.get('character') + " approached a campfire and was quickly shoved on top of it and douseded in gasoline. His friends couldn't reach him before his screams ceased. His murderer was gone."
                 this.killActiveCharacter('sfx-burned')
             } else {
@@ -537,8 +527,8 @@ class Walk extends Phaser.Scene {
             }
         } else if (this.currScene == 'outhouse'){
             //death
-            if(this.suffocated == false){
-                this.suffocated = true
+            if(this.registry.get('suffocated') == false){
+                this.registry.set('suffocated', true)
                 this.deathText.text = this.registry.get('character') + " just needed to tinkle and entered the outhouse. Before he could fully relieve himself, he was pulled down, buried, and suffocated under the earth. Someone was waiting for him."
                 this.killActiveCharacter('sfx-suffocated')
             } else {
@@ -551,8 +541,8 @@ class Walk extends Phaser.Scene {
             }
         } else if (this.currScene == 'field_8'){
             //death
-            if(this.shot == false){
-                this.shot = true
+            if(this.registry.get('shot') == false){
+                this.registry.set('shot', true)
                 this.deathText.text = this.registry.get('character') + " was awestruck by the beauty of the scenery long enough for his attacker to line up a shot. A sharp pain went down " + this.registry.get('character') + "'s back as a blowdart penetrated his neck."
                 this.killActiveCharacter('sfx-shot')
             } else {
