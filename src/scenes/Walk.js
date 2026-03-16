@@ -16,14 +16,14 @@ class Walk extends Phaser.Scene {
         this.ROW4 = config.height*2 / 3
         this.ROW5 = config.height*5 / 6
 
-        this.drowned = false
-        this.burned = false
-        this.pushed = false
-        this.stabbed = false
-        this.crushed = false
-        this.knockedOut = false
-        this.suffocated = false
-        this.keyCollected = false
+        this.drowned = true
+        this.burned = true
+        this.pushed = true
+        this.stabbed = true
+        this.crushed = true
+        this.knockedOut = true
+        this.suffocated = true
+        this.keyCollected = true
 
     }
 
@@ -70,6 +70,7 @@ class Walk extends Phaser.Scene {
 
     advanceScene(nextScene) {
         this.sceneElements.clear(true, true)
+        this.deathText.text = ""
 
         this.currScene = nextScene
 
@@ -91,60 +92,459 @@ class Walk extends Phaser.Scene {
         //add arrow(s)
         if(this.currScene == 'mess_hall'){
             //arrow 1
-            this.arrow1 = this.add.image(200, 150, 'arrow_up')
+            this.arrow1 = this.add.image(COL5, ROW3, 'arrow_up')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
-                this.advanceScene('trees')
+                this.advanceScene('forest_3')
             })
             
+        } else if (this.currScene == 'forest_3'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL1, ROW3, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('forest_2')
+            })
             //arrow 2
-            this.arrow2 = this.add.image(700, 400, 'arrow_up')
-            this.arrow2.setInteractive()
-            this.arrow2.on('pointerdown', () => {
-                this.advanceScene('merrill_entrance')
-            })
-            
-        } else if (this.currScene == 'trees'){
-            //arrow 1
-            this.arrow1 = this.add.image(300, 300, 'arrow_up')
+            this.arrow1 = this.add.image(COL5, ROW2, 'arrow_up')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
-                this.advanceScene('trees_death')
+                this.advanceScene('forest_4')
             })
 
-        } else if (this.currScene == 'merrill_entrance'){
+        } else if (this.currScene == 'forest_2'){
             //arrow 1
-            this.arrow1 = this.add.image(300, 400, 'arrow_up')
+            this.arrow1 = this.add.image(COL2, ROW4, 'arrow_up')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
-                this.advanceScene('merrill_hallway')
+                this.advanceScene('forest_1')
             })
-
-        } else if (this.currScene == 'merrill_hallway'){
-            //arrow 1
-            this.arrow1 = this.add.image(450, 500, 'arrow_up')
+            //arrow 2
+            this.arrow1 = this.add.image(COL5, ROW5, 'arrow_down')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
-                this.advanceScene('classroom_entrance')
+                this.advanceScene('forest_3')
             })
 
-        } else if (this.currScene == 'classroom_entrance'){
+        } else if (this.currScene == 'forest_4'){
             //arrow 1
-            this.arrow1 = this.add.image(100, 300, 'arrow_up')
+            this.arrow1 = this.add.image(COL2, ROW5, 'arrow_down')
             this.arrow1.setInteractive()
             this.arrow1.on('pointerdown', () => {
-                this.advanceScene('classroom')
+                this.advanceScene('forest_3')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL4, ROW3, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('field_1')
             })
 
-        } else if (this.currScene == 'classroom'){
+        } else if (this.currScene == 'field_1'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL3, ROW5, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('field_2')
+            })
+
+        } else if (this.currScene == 'field_2'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL4, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('field_3')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL2, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('field_4')
+            })
+
+        } else if (this.currScene == 'field_3'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL3, ROW3, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('cliff')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL3, ROW5, 'arrow_down')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('field_2')
+            })
+
+        } else if (this.currScene == 'field_4'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL1, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('stream')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL5, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('field_5')
+            })
+
+        } else if (this.currScene == 'stream'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL2, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('lake')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL5, ROW5, 'arrow_down')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('field_4')
+            })
+
+        } else if (this.currScene == 'lake'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL1, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('dock')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL3, ROW5, 'arrow_down')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('stream')
+            })
+
+        } else if (this.currScene == 'field_5'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL1, ROW5, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('forest_11')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL4, ROW5, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('tent_1')
+            })
+
+        } else if (this.currScene == 'tent_1'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL1, ROW5, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('tent_2')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL4, ROW5, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('forest_5')
+            })
+
+        } else if (this.currScene == 'tent_2'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL1, ROW5, 'arrow_down')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('tent_1')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL5, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('tent_3')
+            })
+
+        } else if (this.currScene == 'forest_5'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL4, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('cabin')
+            })
+
+        } else if (this.currScene == 'cabin'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL3, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('cabin_exterior')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL5, ROW5, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('field_7')
+            })
+
+        } else if (this.currScene == 'cabin_exterior'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL1, ROW5, 'arrow_down')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('cabin')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL3, ROW5, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                if(this.keyCollected){this.advanceScene('cabin_interior')}
+                else{this.deathText.text = "Cabin is locked!"}
+            })
+
+        } else if (this.currScene == 'field_7'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL3, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('lighthouse')
+            })
+
+        } else if (this.currScene == 'lighthouse'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL1, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('lighthouse_door')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL5, ROW5, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('shore_1')
+            })
+
+        } else if (this.currScene == 'shore_1'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL1, ROW5, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('waterfall')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL3, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('shore_2')
+            })
+
+        } else if (this.currScene == 'shore_2'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL3, ROW5, 'arrow_down')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('shore_1')
+            })
+
+        } else if (this.currScene == 'waterfall'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL4, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('field_8')
+            })
+
+        } else if (this.currScene == 'field_8'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL3, ROW5, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('forest_6')
+            })
+
+        } else if (this.currScene == 'forest_6'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL2, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('forest_8')
+            })
+
+        } else if (this.currScene == 'forest_8'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL2, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('forest_7')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL3, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('field_6')
+            })
+
+        } else if (this.currScene == 'field_6'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL3, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('forest_4')
+            })
+
+        } else if (this.currScene == 'forest_7'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL2, ROW5, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('forest_9')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL4, ROW5, 'arrow_down')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('forest_8')
+            })
+
+        } else if (this.currScene == 'forest_9'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL2, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('fire')
+            })
+
+        } else if (this.currScene == 'forest_10'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL3, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('forest_11')
+            })
+
+        } else if (this.currScene == 'forest_11'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL2, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('forest_12')
+            })
+            //arrow 2
+            this.arrow1 = this.add.image(COL4, ROW5, 'arrow_down')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('field_5')
+            })
+
+        } else if (this.currScene == 'forest_12'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL3, ROW4, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('outhouse')
+            })
+
+        } else if (this.currScene == 'forest_13'){
+            //arrow 1
+            this.arrow1 = this.add.image(COL2, ROW5, 'arrow_up')
+            this.arrow1.setInteractive()
+            this.arrow1.on('pointerdown', () => {
+                this.advanceScene('forest_7')
+            })
+
+        } else if (this.currScene == 'forest_1'){
             //death
-            this.deathText.text = "You, the playtester, were stabbed by a hidden goblin! You're dead! How are you even reading this? GAME OVER."            
-            this.killActiveCharacter('sfx-knife')
-
-        } else if (this.currScene == 'trees_death'){
+            if(this.knockedOut == false){
+                this.knockedOut = true
+                this.deathText.text = this.registry.get('character') + " was struck and knocked out by a falling tree. Did someone push it down on purpose? "
+                this.killActiveCharacter('sfx-tree')
+            } else {
+                //arrow 1
+                this.arrow1 = this.add.image(COL3, ROW5, 'arrow_down')
+                this.arrow1.setInteractive()
+                this.arrow1.on('pointerdown', () => {
+                    this.advanceScene('forest_2')
+                })
+            }
+        } else if (this.currScene == 'cliff'){
             //death
-            this.deathText.text = "A tree fell on you and knocked you out! Your body was cleared away by a groundskeeper the next morning.       GAME OVER"
-            this.killActiveCharacter('sfx-tree')
+            if(this.pushed == false){
+                this.pushed = true
+                this.deathText.text = this.registry.get('character') + " felt someone push them off the cliff's edge before plummeting to his demise. Who was that?"
+                this.killActiveCharacter('sfx-tree')
+            } else {
+                //arrow 1
+                this.arrow1 = this.add.image(COL2, ROW5, 'arrow_down')
+                this.arrow1.setInteractive()
+                this.arrow1.on('pointerdown', () => {
+                    this.advanceScene('field_3')
+                })
+            }
+        } else if (this.currScene == 'dock'){
+            //death
+            if(this.drowned == false){
+                this.drowned = true
+                this.deathText.text = this.registry.get('character') + " was thrown off the side of the dock and held underwater until he ran out of oxygen. No one got a glimse of his murderer."
+                this.killActiveCharacter('sfx-tree')
+            } else {
+                //arrow 1
+                this.arrow1 = this.add.image(COL4, ROW5, 'arrow_down')
+                this.arrow1.setInteractive()
+                this.arrow1.on('pointerdown', () => {
+                    this.advanceScene('lake')
+                })
+            }
+        } else if (this.currScene == 'tent_3'){
+            //death
+            if(this.stabbed == false){
+                this.stabbed = true
+                this.deathText.text = this.registry.get('character') + " went to investigate the inside of the tent and was quickly trapped inside and stabbed to death by someone on the outside. Only the murderer's silhouette could be seen."
+                this.killActiveCharacter('sfx-tree')
+            } else {
+                //arrow 1
+                this.arrow1 = this.add.image(COL4, ROW5, 'arrow_down')
+                this.arrow1.setInteractive()
+                this.arrow1.on('pointerdown', () => {
+                    this.advanceScene('tent_2')
+                })
+            }
+        } else if (this.currScene == 'lighthouse_door'){
+            //death
+            if(this.crushed == false){
+                this.crushed = true
+                this.deathText.text = this.registry.get('character') + " approached the lighthouse door and, before he could react, a heavy object was dropped onto him from the top of the lighthouse. Who did this?"
+                this.killActiveCharacter('sfx-tree')
+            } else {
+                //arrow 1
+                this.arrow1 = this.add.image(COL1, ROW5, 'arrow_down')
+                this.arrow1.setInteractive()
+                this.arrow1.on('pointerdown', () => {
+                    this.advanceScene('lighthouse')
+                })
+            }
+        } else if (this.currScene == 'fire'){
+            //death
+            if(this.burned == false){
+                this.burned = true
+                this.deathText.text = this.registry.get('character') + " approached a campfire and was quickly shoved on top of it and douseded in gasoline. His friends couldn't reach him before his screams ceased. His murderer was gone."
+                this.killActiveCharacter('sfx-tree')
+            } else {
+                //arrow 1
+                this.arrow1 = this.add.image(COL4, ROW3, 'arrow_up')
+                this.arrow1.setInteractive()
+                this.arrow1.on('pointerdown', () => {
+                    this.advanceScene('forest_10')
+                })
+            }
+        } else if (this.currScene == 'outhouse'){
+            //death
+            if(this.suffocated == false){
+                this.suffocated = true
+                this.deathText.text = this.registry.get('character') + " just needed to tinkle and entered the outhouse. Before he could fully relieve himself, he was pulled down, buried, and suffocated under the earth. Someone was waiting for him."
+                this.killActiveCharacter('sfx-tree')
+            } else {
+                //arrow 1
+                this.arrow1 = this.add.image(COL5, ROW4, 'arrow_up')
+                this.arrow1.setInteractive()
+                this.arrow1.on('pointerdown', () => {
+                    this.advanceScene('forest_13')
+                })
+            }
         }
 
         if(this.arrow1){
