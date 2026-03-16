@@ -496,6 +496,7 @@ class Walk extends Phaser.Scene {
                 this.deathText.text = this.registry.get('character') + " went to investigate the inside of the tent and was quickly trapped inside and stabbed to death by someone on the outside. Only the murderer's silhouette could be seen."
                 this.killActiveCharacter('sfx-knife')
             } else {
+                console.log("already died here")
                 //arrow 1
                 this.arrow1 = this.add.image(this.COL4, this.ROW5, 'arrow_down')
                 this.arrow1.setInteractive()
