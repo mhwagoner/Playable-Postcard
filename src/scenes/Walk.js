@@ -4,17 +4,17 @@ class Walk extends Phaser.Scene {
     }
 
     init() {
-        this.FAR_LEFT = config.width / 6
-        this.LEFT = config.width / 3
-        this.CENTER_X = config.width / 2
-        this.RIGHT = config.width*2 / 3
-        this.FAR_RIGHT = config.width*5 / 6
+        this.COL1 = config.width / 6
+        this.COL2 = config.width / 3
+        this.COL3 = config.width / 2
+        this.COL4 = config.width*2 / 3
+        this.COL5 = config.width*5 / 6
 
-        this.TOP = config.height / 6
-        this.UP = config.height / 3
-        this.CENTER_Y = config.height / 2
-        this.DOWN = config.height*2 / 3
-        this.BOTTOM = config.height*5 / 6
+        this.ROW1 = config.height / 6
+        this.ROW2 = config.height / 3
+        this.ROW3 = config.height / 2
+        this.ROW4 = config.height*2 / 3
+        this.ROW5 = config.height*5 / 6
 
         this.drowned = false
         this.burned = false
@@ -28,7 +28,7 @@ class Walk extends Phaser.Scene {
     }
 
     create() {
-        this.cardBack = this.add.image(0, 0, 'card_border').setOrigin(0).setDepth(11)
+        this.cardBorder = this.add.image(0, 0, 'card_border').setOrigin(0).setDepth(11)
         this.flashImage = this.registry.get('character') + '_flash'
         this.flashlight = this.physics.add.sprite(config.width/2, config.height/2, this.flashImage).setOrigin(0.5).setDepth(10).setScale(1)
 
@@ -89,7 +89,7 @@ class Walk extends Phaser.Scene {
         */
 
         //add arrow(s)
-        if(this.currScene == 'merrill_choice'){
+        if(this.currScene == 'mess_hall'){
             //arrow 1
             this.arrow1 = this.add.image(200, 150, 'arrow_up')
             this.arrow1.setInteractive()
