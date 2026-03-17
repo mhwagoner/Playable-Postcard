@@ -141,6 +141,7 @@ class Text extends Phaser.Scene {
                 3. option1 : "option 1 text"
                 4. convo1 : 2 (number conversation to jump to)
                 5. location1 : "forest" (new location of speaker)
+                6. jump : either convo# or "walk"
         */
 
         // make sure there are lines left to read in this conversation, otherwise jump to next conversation
@@ -244,10 +245,23 @@ class Text extends Phaser.Scene {
         if(this.dialog[this.dialogConvo][this.dialogLine-1]['convo' + numOption]){ //convo1 stores the # conversation option 1 sends to
                 
             //change speaker's location (if applicable)
-            if(this.dialog[this.dialogConvo][this.dialogLine-1]['location' + numOption]){ //location1 stores the location option 2 changes
+            if(this.dialog[this.dialogConvo][this.dialogLine-1]['location' + numOption]){ //location1 stores the location option 1 changes
                 let newLocation = this.dialog[this.dialogConvo][this.dialogLine-1]['location' + numOption]
-                this.registry.set(this.dialogSpeaker, newLocation)
-                console.log(this.dialogSpeaker + " moved to: " + this.registry.get(this.dialogSpeaker))
+                
+                if(this.dialogSpeaker == 'miguel' || this.dialogSpeaker == 'carlos' || this.dialogSpeaker == 'wilbur'){
+                    if(this.registry.get('miguel') != 'dead') this.registry.set('miguel', newLocation)
+                    if(this.registry.get('carlos') != 'dead') this.registry.set('carlos', newLocation)
+                    if(this.registry.get('wilbur') != 'dead') this.registry.set('wilbur', newLocation)
+                } else if(this.dialogSpeaker == 'dave' || this.dialogSpeaker == 'wolfgang'){
+                    if(this.registry.get('dave') != 'dead') this.registry.set('dave', newLocation)
+                    if(this.registry.get('wolfgang') != 'dead') this.registry.set('wolfgang', newLocation)
+                } else if(this.dialogSpeaker == 'doug' || this.dialogSpeaker == 'dopey'){
+                    if(this.registry.get('doug') != 'dead') this.registry.set('doug', newLocation)
+                    if(this.registry.get('dopey') != 'dead') this.registry.set('dopey', newLocation)
+                } else {
+                    this.registry.set(this.dialogSpeaker, newLocation)
+                }
+                //console.log(this.dialogSpeaker + " moved to: " + this.registry.get(this.dialogSpeaker))
             }
             
             //change to new conversation
