@@ -575,7 +575,7 @@ class Walk extends Phaser.Scene {
     killActiveCharacter(sfxKey){
         this.dead = true
         this.flashlight.setTexture('eyes').setScale(0.7)
-        this.registry.set(this.registry.get('character'), 'dead')
+        if(this.registry.get('character') != 'socky'){this.registry.set(this.registry.get('character'), 'dead')}
 
         //conditions for which convo to return to
         switch(this.registry.get('character')){

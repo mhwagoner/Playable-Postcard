@@ -110,7 +110,7 @@
 			"dialog" : "Only to my parents..."
 		},
 		{
-			"speaker" : "Wolfgang",
+			"speaker" : "wolfgang",
 			"dialog" : "Guys finish up! It's almost time for the best part of camping, roasting weenies for dinner!",
 			"jump" : 9
 		}
@@ -346,7 +346,8 @@
 		},
 		{
 			"speaker" : "socky",
-			"dialog" : "Stay safe guys! It's getting pretty dark, you might want to grab a flashlight before you go."
+			"dialog" : "Stay safe guys! It's getting pretty dark, you might want to grab a flashlight before you go.",
+			"jump" : "walk"
 		}
 	],
 	[
@@ -921,7 +922,8 @@
 		},
 		{
 			"speaker" : "wilbur",
-			"dialog" : "..."
+			"dialog" : "...",
+			"jump" : "walk"
 		}
 	],
 	[
@@ -1054,7 +1056,8 @@
 		},
 		{
 			"speaker" : "wolfgang",
-			"dialog" : "Rest well buddy..."
+			"dialog" : "Rest well buddy...",
+			"jump" : "walk"
 		}
 	],
 	[
@@ -1096,7 +1099,8 @@
 		},
 		{
 			"speaker" : "socky",
-			"dialog" : "Good idea!"
+			"dialog" : "Good idea!",
+			"jump" : "walk"
 		}
 	],
 	[
@@ -1340,16 +1344,16 @@
 			"speaker" : "socky",
 			"dialog" : "DOUG! HELP! I'M HEARING VOICES! WHAT DO I DO???",
 			"option1" : "---Suffer",
-			"convo1" : 0,
+			"convo1" : 33,
 			"location1" : "mess_hall",
 			"option2" : "---Suffer",
-			"convo2" : 0,
+			"convo2" : 33,
 			"location2" : "mess_hall",
 			"option3" : "---Suffer",
-			"convo3" : 0,
+			"convo3" : 33,
 			"location3" : "mess_hall",
 			"option4" : "---Suffer",
-			"convo4" : 0,
+			"convo4" : 33,
 			"location4" : "mess_hall"
 		}
 	],

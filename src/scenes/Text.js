@@ -52,12 +52,6 @@ class Text extends Phaser.Scene {
 
         //load background image
         this.background = this.add.image(0, 0, 'card_text').setOrigin(0,0)
-
-        //add background music
-        this.bgm = this.sound.add('bgm-text', { 
-            loop: true, volume: 0.5 
-        })
-        this.bgm.play()
         
         // setup keyboard input
         cursors = this.input.keyboard.createCursorKeys()

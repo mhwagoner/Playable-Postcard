@@ -110,7 +110,11 @@ class Load extends Phaser.Scene {
     }
 
     create() {
-        //make anims
+        //add background music
+        this.bgm = this.sound.add('bgm-text', { 
+            loop: true, volume: 0.5 
+        })
+        this.bgm.play()
 
         //set initial locations for characters using registry (a location can be set as 'dead' to indicate their death)
         this.registry.set({
