@@ -578,8 +578,88 @@ class Walk extends Phaser.Scene {
         this.registry.set(this.registry.get('character'), 'dead')
 
         //conditions for which convo to return to
-        if(this.registry.get('character') == 'wilbur'){
-            this.registry.set('dialogConvo', 10)
+        switch(this.registry.get('character')){
+            case 'wilbur':
+                if(this.registry.get('miguel') != 'dead' && this.registry.get('carlos') != 'dead'){//bros are alive
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('miguel') == 'dead' && this.registry.get('carlos') != 'dead'){//Carlos is alive
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('miguel') != 'dead' && this.registry.get('carlos') == 'dead'){//Miguel is alive
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('miguel') == 'dead' && this.registry.get('carlos') == 'dead' && this.registry.get('wolfgang') == 'dead' && this.registry.get('dave') == 'dead'){//all 5 are dead
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('miguel') == 'dead' && this.registry.get('carlos') == 'dead'){//all 3 are dead
+                    this.registry.set('dialogConvo', 10)
+                }
+            break
+
+            case 'miguel':
+                if(this.registry.get('wilbur') != 'dead' && this.registry.get('carlos') != 'dead'){//rest are alive
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('wilbur') == 'dead' && this.registry.get('carlos') != 'dead'){//Carlos is alive
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('wilbur') != 'dead' && this.registry.get('carlos') == 'dead'){//Wilbur is alive
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('wilbur') == 'dead' && this.registry.get('carlos') == 'dead' && this.registry.get('wolfgang') == 'dead' && this.registry.get('dave') == 'dead'){//all 5 are dead
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('wilbur') == 'dead' && this.registry.get('carlos') == 'dead'){//all 3 are dead
+                    this.registry.set('dialogConvo', 10)
+                }
+            break
+
+            case 'carlos':
+                if(this.registry.get('miguel') != 'dead' && this.registry.get('wilbur') != 'dead'){//rest are alive
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('miguel') == 'dead' && this.registry.get('wilbur') != 'dead'){//Wilbur is alive
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('miguel') != 'dead' && this.registry.get('wilbur') == 'dead'){//Miguel is alive
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('miguel') == 'dead' && this.registry.get('wilbur') == 'dead' && this.registry.get('wolfgang') == 'dead' && this.registry.get('dave') == 'dead'){//all 5 are dead
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('miguel') == 'dead' && this.registry.get('wilbur') == 'dead'){//all 3 are dead
+                    this.registry.set('dialogConvo', 10)
+                }
+            break
+
+            case 'wolfgang':
+                if(this.registry.get('dave') != 'dead'){//Dave is alive
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('miguel') == 'dead' && this.registry.get('carlos') == 'dead' && this.registry.get('wilbur') == 'dead' && this.registry.get('dave') == 'dead'){//all 5 are dead
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('dave') == 'dead'){//both are dead
+                    this.registry.set('dialogConvo', 10)
+                }
+            break
+
+            case 'dave':
+                if(this.registry.get('wolfgang') != 'dead'){//Wolfgang is alive
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('miguel') == 'dead' && this.registry.get('carlos') == 'dead' && this.registry.get('wolfgang') == 'dead' && this.registry.get('wilbur') == 'dead'){//all 5 are dead
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('wolfgang') == 'dead'){//both are dead
+                    this.registry.set('dialogConvo', 10)
+                }
+            break
+
+            case 'doug':
+                if(this.registry.get('dopey') != 'dead'){//Dopey is alive
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('dopey') == 'dead'){//both are dead
+                    this.registry.set('dialogConvo', 10)
+                }
+            break
+
+            case 'dopey':
+                if(this.registry.get('doug') != 'dead'){//Doug is alive
+                    this.registry.set('dialogConvo', 10)
+                } else if(this.registry.get('doug') == 'dead'){//both are dead
+                    this.registry.set('dialogConvo', 10)
+                }
+            break
+
+            case 'socky':
+                this.registry.set('dialogConvo', 10)
+            break
         }
 
         if (this.sfxPlayed == false){
