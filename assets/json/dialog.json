@@ -342,11 +342,1089 @@
 		},
 		{
 			"speaker" : "doug",
-			"dialog" : "Good greif, guess I'm stuck on wiener patrol."
+			"dialog" : "Good grief, guess I'm stuck on wiener patrol."
 		},
 		{
 			"speaker" : "socky",
 			"dialog" : "Stay safe guys! It's getting pretty dark, you might want to grab a flashlight before you go."
+		}
+	],
+	[
+		{
+			"speaker" : "carlos",
+			"dialog" : "Oh my god! Oh my god!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "This isn't real bro..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "This can't be happening..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "He's not making it back from this..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "I know..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "This never happens in our franchise..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "It doesn't even feel canon..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "YOU'RE LOOKING RIGHT AT HIM!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "How are we going to tell the others?"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "Bro..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "What?"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "That could've been one of us."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "Bu-"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "We need to get back to the others. Now.",
+			"jump" : "walk"
+		}
+	],
+	[
+		{
+			"speaker" : "wilbur",
+			"dialog" : "Oh my god! Oh my god!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "MOVE WILBUR!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "This can't be happening..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "Is he okay..?"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "WILBUR! GET HELP!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "WILBUR!!!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "wilbur... get help..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "...why is this happening?"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "*Sobbing*"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "...this isn't supposed to happen in our franchise..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "*Sobbing* hermano! *Sobbing* hermano..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "*Whimpering*"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "C'mon buddy... *Whimper* Let's go find the others..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "Carlos..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "He's at peace now... We should run before you're next..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "right...",
+			"jump" : "walk"
+		}
+	],
+	[
+		{
+			"speaker" : "wilbur",
+			"dialog" : "Oh my god! Oh my god!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "MOVE WILBUR!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "This can't be happening..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "Is he okay..?"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "WILBUR! GET HELP!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "WILBUR!!!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "wilbur... get help..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "...why is this happening?"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "*Sobbing*"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "...this isn't supposed to happen in our franchise..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "*Sobbing* hermano! *Sobbing* hermano..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "*Whimpering*"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "C'mon buddy... *Whimper* Let's go find the others..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "Miguel..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "He's at peace now... We should run before you're next..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "right...",
+			"jump" : "walk"
+		}
+	],
+	[
+		{
+			"speaker" : "miguel",
+			"dialog" : "NO!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "NO NO NO!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "CARLOS!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "HERMANO!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "NO!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "FIRST WILBUR AND NOW YOU!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "OH GOD, OH GOD, OH GOD!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "WHAT AM I GOING TO TELL PAPA?!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "Oh god..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "HELP!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "SOMEONE HELP!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "no..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "*Sobbing* hermano! *Sobbing* hermano..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "SOCKY!!!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "DOUG!!!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "MURDERER!!!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "SHOW YOURSELF, MURDERER!!!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "I'M GOING TO GET YOU, BROTHER KILLER!!!",
+			"jump" : "walk"
+		}
+	],
+	[
+		{
+			"speaker" : "carlos",
+			"dialog" : "NO!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "NO NO NO!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "MIGUEL!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "HERMANO!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "NO!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "FIRST WILBUR AND NOW YOU!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "OH GOD, OH GOD, OH GOD!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "WHAT AM I GOING TO TELL PAPA?!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "Oh god..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "HELP!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "SOMEONE HELP!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "no..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "*Sobbing* hermano! *Sobbing* hermano..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "SOCKY!!!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "DOUG!!!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "MURDERER!!!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "SHOW YOURSELF, MURDERER!!!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "I'M GOING TO GET YOU, BROTHER KILLER!!!",
+			"jump" : "walk"
+		}
+	],
+	[
+		{
+			"speaker" : "miguel",
+			"dialog" : "Wilbur..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "Wilbur... oh god..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "*Sobbing* not you too..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "no..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "HELP!!!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "SOCKY!!!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "DOUG!!!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "MURDERER!!!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "SHOW YOURSELF, MURDERER!!!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "I'M GOING TO GET YOU, BROTHER KILLER!!!",
+			"jump" : "walk"
+		}
+	],
+	[
+		{
+			"speaker" : "carlos",
+			"dialog" : "Wilbur..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "Wilbur... oh god..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "*Sobbing* not you too..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "no..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "HELP!!!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "SOCKY!!!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "DOUG!!!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "MURDERER!!!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "SHOW YOURSELF, MURDERER!!!"
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "I'M GOING TO GET YOU, BROTHER KILLER!!!",
+			"jump" : "walk"
+		}
+	],
+	[
+		{
+			"speaker" : "wilbur",
+			"dialog" : "OH MY GOD!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "no... oh god..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "*Sobbing* not you too..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "no..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "HELP!!!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "SOCKY!!!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "DOUG!!!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "THIS IS MY NIGHTMARE!!!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "WHY ME!!!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "MURDERER!!!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "WHY DID YOU SPARE ME!?!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "Oh god..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "Sleep well my friends..."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "..."
+		}
+	],
+	[
+		{
+			"speaker" : "dave",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "What was that noise?"
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "What are you doing down there Wolfgang?"
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "Wolfgang..?"
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "This isn't funny Wolfgang, and I know funny..."
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "Doggy duo..?"
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "gotta find Socky..."
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "SoCkY!!! I'm CoMinG BaCk!!!"
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "Which way was it again..?",
+			"jump" : "walk"
+		}
+	],
+	[
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "What was that scary sound..?"
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "Dave..?"
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "OH GOD!"
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "OH GOD NO!"
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "WHAT HAPPENED!!!"
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "THIS ISN'T SUPPOSED TO HAPPEN!"
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "What did you get yourself into this time buddy..."
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "little buddy..."
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "*Sobbing*"
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "Socky..."
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "SOCKY!"
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "SOCKY WE NEED HELP!!!"
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "SOCKY!!!"
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "It's not safe here..."
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "Rest well buddy..."
+		}
+	],
+	[
+		{
+			"speaker" : "socky",
+			"dialog" : "Gotta love the delicious smell of meat on the grill!"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "Makes me excited to EAT!!!"
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "Patience Dopey, we shouoldn't start without the others."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "I wonder how they're doing. They've been gone for a while, maybe we should go out looking for them?"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "They can handle themselves I'm sure."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "You're right. We can wait a bit longer before I really get worried."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "I know what will make you feel better!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "What?"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "Close your eyes and imagine all the innocent fun they're having!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Good idea!"
+		}
+	],
+	[
+		{
+			"speaker" : "socky",
+			"dialog" : "Dopey... I hate to say this, but closing my eyes and imagining the others having fun isn't really working..."
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "Not to mention it's causing you to burn half of the hotdogs..."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Whoopsie!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "I'm getting worried about the others... It's been quite a while since they left..."
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "You're right. I'm not contributing much here, I can go looking for them."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Great! And you can bring Dopey too!"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "What?!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Is there a problem?"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "I don't want to go into those spooky woods! What if our friends have been picked off one by one in classic horror movie fashion? I don't want to be the next victim!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Scaredy-cat! Scaredy-cat!"
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "Huhuh! Scaredy-cat! Scaredy-cat!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Go accompany Doug on his search Dopey, I'm not letting you two break the buddy rule on my watch."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "Fine... Then the blood will be on your hands Socky!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Don't be so silly Dopey."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "You know as well as I do that Dave probably got the outhouse door stuck again and everyone else is trying to jam it open."
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "So where should we start our search?",
+			"option1" : "---The Mess Hall",
+			"convo1" : 29,
+			"location1" : "mess_hall",
+			"option2" : "---The Cabin",
+			"convo2" : 29,
+			"location2" : "cabin_exterior",
+			"option3" : "---The Shore",
+			"convo3" : 29,
+			"location3" : "shore_2",
+			"option4" : "---The Tents",
+			"convo4" : 29,
+			"location4" : "tent_1"
+		}
+	],
+	[
+		{
+			"speaker" : "socky",
+			"dialog" : "That's a good choice. Be careful out there, bring flashlights."
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "Get the flashlights Dopey."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "Hey! Why does he get to tell me what to do?"
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "I'll get the flashlights...",
+			"jump" : "walk"
+		}
+	],
+	[
+		{
+			"speaker" : "dopey",
+			"dialog" : "What was that!?"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "Doug get up."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "Doug..?"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "Oh crap..."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "*Whimper* Doug... *Whimper*"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "I'm sorry for joking!"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "I'm a dopey dragon! I make jokes, I'm not prepared for this!"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "Someone did this..."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "I bet they did this to the others too..."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "Sorry Doug... I gotta run... I know you'd understand..."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "See you in H-E-Double-Hocky-Sticks friend..."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "SOCKY!!!"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "SOCKY I'M COMING BACK FOR YOU!",
+			"jump" : "walk"
+		}
+	],
+	[
+		{
+			"speaker" : "doug",
+			"dialog" : "What the Hell..?"
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "Dopey!"
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "Dopey, oh god!"
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "*Whimper*"
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "Every day, she takes a morning bath, she wets her hair. Wraps a towel around her as she's heading for the bedroom chair. It's just another day..."
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "AAAAAAAARGGGGGHUHGHUUHUUH"
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "HAAAAAAAAAAAAAM!",
+			"jump" : "walk"
+		}
+
+	],
+	[
+		{
+			"speaker" : "socky",
+			"dialog" : "Huh? What was that noise?"
+		},
+		{
+			"speaker" : "shadow",
+			"dialog" : "...socky..."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "WHA-! What the heck-balls!"
+		},
+		{
+			"speaker" : "shadow",
+			"dialog" : "...suffer..."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "AAAAAHHHH!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "DOUG! HELP! I'M HEARING VOICES! WHAT DO I DO???",
+			"option1" : "---Suffer",
+			"convo1" : 0,
+			"location1" : "mess_hall",
+			"option2" : "---Suffer",
+			"convo2" : 0,
+			"location2" : "mess_hall",
+			"option3" : "---Suffer",
+			"convo3" : 0,
+			"location3" : "mess_hall",
+			"option4" : "---Suffer",
+			"convo4" : 0,
+			"location4" : "mess_hall"
+		}
+	],
+	[
+		{
+			"speaker" : "socky",
+			"dialog" : "AAAAAHHHH! RUN AWAY SOCKY!",
+			"jump" : "walk"
+		}
+	],
+	[
+		{
+			"speaker" : "shadow",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "shadow",
+			"dialog" : "you... have... failed..."
+		},
+		{
+			"speaker" : "shadow",
+			"dialog" : "there is... another... way..."
+		},
+		{
+			"speaker" : "shadow",
+			"dialog" : "now..."
+		},
+		{
+			"speaker" : "shadow",
+			"dialog" : "it's time to go..."
+		},
+		{
+			"speaker" : "shadow",
+			"dialog" : "i hope you enjoyed the show...",
+			"option1" : "---I didn't.",
+			"convo1" : 35
+		}
+	],
+	[
+		{
+			"speaker" : "shadow",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "shadow",
+			"dialog" : "WHAT!?"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "",
+			"option1" : "---I DIDN'T!",
+			"location1" : "mess_hall",
+			"convo1" : 36
+		}
+	],
+	[
+		{
+			"speaker" : "shadow",
+			"dialog" : "NO WAY!?!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Second wind baby!",
+			"jump" : "walk"
+		}
+	],
+	[
+		{
+			"speaker" : "shadow",
+			"dialog" : "NO WAY!?!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Second wind baby!",
+			"jump" : "walk"
 		}
 	]
 ]
