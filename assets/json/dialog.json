@@ -1418,13 +1418,82 @@
 	],
 	[
 		{
-			"speaker" : "shadow",
-			"dialog" : "NO WAY!?!"
+			"speaker" : "heebee",
+			"dialog" : "Welcome..."
 		},
 		{
 			"speaker" : "socky",
-			"dialog" : "Second wind baby!",
+			"dialog" : "Welcome?! Who the heck are you!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Better question, WHAT DID YOU DO TO MY FRIENDS!?"
+		},
+		{
+			"speaker" : "heebee",
+			"dialog" : "Well well, happy you asked, strap in for the convoluted backstory of ho-"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "No thanks!"
+		},
+		{
+			"speaker" : "heebee",
+			"dialog" : "What are you doing?!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "AVENGING MY FRIENDS!"
+		},
+		{
+			"speaker" : "heebee",
+			"dialog" : "*GAG* *GAG* *COUGH* agh! stop! you're choking me!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "THAT'S THE POINT!"
+		},
+		{
+			"speaker" : "heebee",
+			"dialog" : "*GAG* uncle! uncle! *GAG*"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Not this time!"
+		},
+		{
+			"speaker" : "heebee",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "It's done..."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Mom..."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Dad..."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "I'm not going back to summer camp again..."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "..."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Thank you Adobe stock for the images, Pixabay for the sound effects, Nathan Altice for some code, and Michael Wagoner for everything else..."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Goodnight... Love, -Socky.",
 			"jump" : "walk"
 		}
+
 	]
 ]

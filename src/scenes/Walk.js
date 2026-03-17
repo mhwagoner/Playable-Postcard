@@ -558,7 +558,7 @@ class Walk extends Phaser.Scene {
             //socky confronts heebee
             this.dead = true
             this.deathText.text = "Press [Space] to confront Heebee."
-            this.registry.set('dialogConvo', 36)
+            this.registry.set('dialogConvo', 37)
         }
 
         if(this.arrow1){
