@@ -117,7 +117,7 @@ class Load extends Phaser.Scene {
             character: '',
             dialogConvo: 1,
             socky: 'out',
-            doug: 'tent_1',
+            doug: 'out',
             dopey: 'out',
             dave: 'out',
             miguel: 'out',
@@ -136,6 +136,6 @@ class Load extends Phaser.Scene {
         })
 
         // proceed once loading completes
-        this.scene.start('campfireScene')
+        this.scene.start('textScene')
     }
 }

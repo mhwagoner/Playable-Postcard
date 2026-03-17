@@ -27,9 +27,9 @@
 			"speaker" : "socky",
 			"dialog" : "You won't believe what we had for breakfast, it was a full bar of...",
 			"option1" : "---bananas!",
-			"convo1" : 1,
+			"convo1" : 2,
 			"option2" : "---M&M cookies!",
-			"convo2" : 2
+			"convo2" : 3
 		}
 	],
 	[
@@ -49,7 +49,242 @@
 	[
 		{
 			"speaker" : "socky",
-			"dialog" : "Anyway, after breakfast we got into our groups. our tents only hold up to "
+			"dialog" : "Anyway, after breakfast we got into our groups. our tents only hold up to three, so I'm with Doug and Dopey. (You remember them right?)"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "I think Wolfgang and Dave are in a tent together, and Miguel, Carlos, and Wilbur are also in a tent as a group. The camp counselors want us to travel as groups as well, so I'll probably be with Doug and Dopey for most of the trip after today."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Oh my gosh! That reminds me, we all got a tour of the area in the afternoon, and I gotta tell you what happened to...",
+			"option1" : "---Dopey",
+			"convo1" : 5,
+			"option2" : "---Wilbur",
+			"convo2" : 6,
+			"option3" : "---Dave",
+			"convo3" : 7,
+			"option4" : "---Carlos",
+			"convo4" : 8
+		}
+	],
+	[
+		{
+			"speaker" : "socky",
+			"dialog" : "We found a tree with a bit branch growing off of it. It wasn't very interesting, so most of us just walked right by it. Meanwhile, Dopey tried to jump up and hold onto it."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "We only realized what he did when we heard the branch snap and Dopey go 'OOoomph!' as he hit the ground! I guess his wings couldn't help him out! Haha! Luckily only the tree got hurt."
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "Socky! Are you seriously going to embarress me in the letter to your parents???"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "It's not a letter, it's a postcard! And you're inturrupting my flow Dopey!"
+		},
+		{
+			"speaker" : "dopey",
+			"dialog" : "Whatever it is finish up, we all finished writing ours super fast, and it's almost time for dinner!",
+			"jump" : 9
+		}
+
+	],
+	[
+		{
+			"speaker" : "socky",
+			"dialog" : "A lot of the trails here go right through some dense forests. I guess some were pine trees because Wilbur was unlucky enought to get bonked in the noggin by a falling pinecone!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "He took it in stride though. He kept the 'murder weapon' (haha!) and he's using it now to make a weird looking craft."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "Socky, do you always narrate your thoughts when you're writing letters?"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Only to my parents..."
+		},
+		{
+			"speaker" : "Wolfgang",
+			"dialog" : "Guys finish up! It's almost time for the best part of camping, roasting weenies for dinner!",
+			"jump" : 9
+		}
+
+	],
+	[
+		{
+			"speaker" : "socky",
+			"dialog" : "He's always so clumsy, He tried to challenge us to a race while we were hiking through dirt that was wet from last night's rainfall."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Before we could say no, he blurted out 'threetwooneGO!', took a couple steps, and slipped face first into the mud. while he was laying in the mud, his hind legs continued to run as if he thought he was still moving(?)"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "He's such a goofball. The funniest part was when we lifted him up and he had a muddy mustache! He's insisted on keeping it as long as possible..."
+		},
+		{
+			"speaker" : "doug",
+			"dialog" : "Socky, will you quit writing and come help me hose the mud off of Dave before dinner?"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Oh! I'll be right over buddy.",
+			"jump" : 9
+		}
+
+	],
+	[
+		{
+			"speaker" : "socky",
+			"dialog" : "In the middle of the hike we found a nice clear valley to sit and have a picnic. I handed out the apple juices that you guys bought me to my friends."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Carlos was in the middle of drinking one when Miguel told a hilarious joke that I can't remember anymore (trust me though, it was hilarious) and Carlos just about lost his marbles and apple juice went up through his nose!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "I wish we took a picture! It was so funny! I'm pretty sure he got some airtime when that stuff exploded out of his nose."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "Hey Socky, what are you writing about?"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Umm... just finishing up telling my mom how much I love her..."
+		},
+		{
+			"speaker" : "carlos",
+			"dialog" : "Oh ok, that's probably what I'd write about too if I had a mom. Anyway, finish up because it's almost time for dinner!",
+			"jump" : 9
+		}
+
+	],
+	[
+		{
+			"speaker" : "socky",
+			"dialog" : "I miss you guys mom and dad, I'll have to stop writing soon because we're about to cook dinner! I'll write back tomorrow, if I don't something has probably gone terribly wrong! (just kidding!) Love you! XOXO -Socky"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Sorry I was writing for so long guys, I'm all yours now!"
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "About time!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "We're about to make some hotdogs, how many do you want Socky?"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "I'm not super hungry, probably just...",
+			"option1" : "---1 hot dog",
+			"convo1" : 10,
+			"option2" : "---2 hot dogs",
+			"convo2" : 11,
+			"option3" : "---3 hot dogs",
+			"convo3" : 12,
+			"option4" : "---10 hot dogs",
+			"convo4" : 13
+		}
+
+	],
+	[
+		{
+			"speaker" : "wilbur",
+			"dialog" : "Easy enough, I'll whip that up right away!"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Can you let me put my own condiments on? I'm kinda particular about my mustard intake these days."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "You got it bud! One plain Jane on it's way.",
+			"jump" : 14
+		}
+	],
+	[
+		{
+			"speaker" : "dave",
+			"dialog" : "He was asking what you want for dinner, not what you see in front of you!"
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "Huh? ohhh! I get it! Up top Dave!"
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "Doggy duo!"
+		},
+		{
+			"speaker" : "wolfgang",
+			"dialog" : "Canine crew!"
+		},
+		{
+			"speaker" : "miguel",
+			"dialog" : "I'm glad they stuck you two in a tent together so no one else has to hear your always awfully annoying alliteration all night. Dang, now you got me doing it!",
+			"jump" : 14
+		}
+	],
+	[
+		{
+			"speaker" : "doug",
+			"dialog" : "'Just' 3? That's kind of a lot isn't it?"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "You always forget us Socks have to bulk up for the winter before we hibernate."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "You guys sleep for the winter? I didn't know that."
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Well, that's when my mom does the laundry, so she sticks me in the washing machine without food for a while."
+		},
+		{
+			"speaker" : "dave",
+			"dialog" : "Woah, my mom would do the same thing to me!",
+			"jump" : 14
+		}
+	],
+	[
+		{
+			"speaker" : "miguel",
+			"dialog" : "Okay buddy, that's way too much for one man! Let alone one sock!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "How fast do you think I can cook?"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Well you've got eight legs! Probably four times as fast as the rest of us!"
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "You're really insistant on eating ten whole sausages aren't you?"
+		},
+		{
+			"speaker" : "socky",
+			"dialog" : "Yes."
+		},
+		{
+			"speaker" : "wilbur",
+			"dialog" : "Ten little smokies coming right up!",
+			"jump" : 14
 		}
 	]
 ]
